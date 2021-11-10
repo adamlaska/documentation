@@ -26,7 +26,7 @@ RUN mv ./node_modules .
 RUN npm run build
 
 # Copy only the dist dir.
-FROM nginx
+FROM nginx:1.21.4
 RUN rm -rf /usr/share/nginx/html/*
 
 COPY --from=builder /app/website/build/prysm-docs /usr/share/nginx/html
