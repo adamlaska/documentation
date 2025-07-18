@@ -293,7 +293,7 @@
         },
         {
           "type": "doc",
-          "id": "manage-validator/maxHealthChecks"
+          "id": "manage-validator/fallbackbeaconnodes"
         }
       ]
     },
