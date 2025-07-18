@@ -1,6 +1,6 @@
 ---
 id: fallbackbeaconnodes
-title: Enhance Validator Reliability Fallback Beacon Nodes
+title: Enhance validator reliability with fallback beacon nodes
 sidebar_label: Add fallback beacon nodes
 ---
 
