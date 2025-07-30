@@ -4,7 +4,7 @@ title: Enhance validator reliability with fallback beacon nodes
 sidebar_label: Add fallback beacon nodes
 ---
 
-To configure a validator using Prysm with fallback beacon nodes, you can leverage Prysm's built-in support for multiple beacon node endpoints. The fallback provides load balancing and redundancy—if one beacon node becomes unresponsive, the validator client will automatically fall back to the others. The configuration uses the `--beacon-rpc-provider` flag with comma-separated gRPC endpoints (e.g., `host:port` pairs).
+To configure a validator using Prysm with fallback beacon nodes, you can leverage Prysm's built-in support for multiple beacon node endpoints. The fallback provides load balancing and redundancy—if one beacon node becomes unresponsive, the validator client will automatically fall back to the others. The configuration uses the `--beacon-rpc-provider` with comma-separated gRPC endpoints (e.g., `host:port` pairs) or the `--beacon-rest-api-provider` flag with with comma-separated HTTP URLs (e.g., `http://localhost:3500,http://remote:3500`).
 
 <!-- Fallbacks are essential for ensuring the reliability, security, and performance of Ethereum staking operations. Here's a breakdown of their key importance:
 
@@ -82,8 +82,8 @@ This mechanism is non-disruptive during regular operation and only activates in 
          - `--wallet-password-file=/path/to/password.txt`: For non-interactive runs.
          - `--enable-doppelganger`: Enables doppelganger protection but may interfere with fallbacks in some cases (e.g., if the primary node is down during startup—test this in a dev environment).
 
-3. **Incorporate Health Checks (Including maxHealthChecks from PR #15401)**:
-   - In the OffchainLabs/prysm fork, Pull Request #15401 introduces enhancements for safe validator shutdowns and restarts based on health checks of the connected beacon nodes. This health check is instrumental in fallback setups, handling scenarios where all beacon nodes become unhealthy.
+3. **Incorporate Health Checks (Including maxHealthChecks from [PR #15401](https://github.com/OffchainLabs/prysm/pull/15401))**:
+   - In the OffchainLabs/prysm fork, [Pull Request #15401](https://github.com/OffchainLabs/prysm/pull/15401) introduces enhancements for safe validator shutdowns and restarts based on health checks of the connected beacon nodes. This health check is instrumental in fallback setups, handling scenarios where all beacon nodes become unhealthy.
    - The key addition is the `--max-health-checks` flag, which controls the maximum number of consecutive failed health checks before the validator client times out and shuts down gracefully (allowing for restarts or manual intervention).
      - **Usage**: Add it to your validator command, e.g.:
        ```
