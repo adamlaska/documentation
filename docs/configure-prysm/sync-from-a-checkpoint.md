@@ -33,8 +33,8 @@ The following command starts a beacon node with checkpoint sync configured to pu
 
 ```sh
 ./prysm.bat beacon-chain --checkpoint-sync-url=http://localhost:3500
-or 
-./prysm.sh beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
+or
+./prysm.bat beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
 ```
     
   </TabItem>
