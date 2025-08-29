@@ -21,9 +21,11 @@ After configuring checkpoint sync, we strongly recommend [verifying the authenti
 
 ## Option 1: Configure checkpoint sync via network request
 
-Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a fully synced beacon node's RPC gateway provider endpoint. This endpoint is usually exposed via port `3500`. If you want to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`, you can optionally set the `--genesis-beacon-api-url` flag. However, if `--genesis-beacon-api-url` is not explicitly provided, Prysm will automatically use the same URL as `--checkpoint-sync-url`. You may also use a public beacon chain checkpoint sync endpoint at your own risk at https://eth-clients.github.io/checkpoint-sync-endpoints/ .
+- Start your Prysm beacon node with the `--checkpoint-sync-url` flag set to a fully synced beacon node's RPC gateway provider endpoint. This endpoint is usually exposed via port `3500`.
+- Set the `--genesis-beacon-api-url` flag to the same URL if you want to fetch the genesis state along with the `BeaconState` and `SignedBeaconBlock`. If `--genesis-beacon-api-url` is not explicitly provided, Prysm will automatically use the same URL as `--checkpoint-sync-url`.
+- You may also use a public beacon chain checkpoint sync endpoint at your own risk from https://eth-clients.github.io/checkpoint-sync-endpoints/.
 
-The following command starts a beacon node with checkpoint sync configured to pull checkpoint state from another local beacon node's RPC endpoint using port `3500`:
+The following commands demonstrate how to start a beacon node with checkpoint sync configured to pull checkpoint state from another local beacon node's RPC endpoint using port `3500`. The first example uses only `--checkpoint-sync-url` (Prysm automatically uses the same URL for genesis state), while the second explicitly sets both URLs:
 
 <Tabs groupId="os" defaultValue="others" values={[
     {label: 'Windows', value: 'win'},
@@ -32,8 +34,10 @@ The following command starts a beacon node with checkpoint sync configured to pu
   <TabItem value="win">
 
 ```sh
+# Simplified usage: Prysm automatically uses checkpoint-sync-url for genesis state
 ./prysm.bat beacon-chain --checkpoint-sync-url=http://localhost:3500
-or
+
+# Explicit usage: Manually specify both URLs (same result as above)
 ./prysm.bat beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
 ```
     
@@ -41,8 +45,10 @@ or
   <TabItem value="others">
 
 ```bash
+# Simplified usage: Prysm automatically uses checkpoint-sync-url for genesis state
 ./prysm.sh beacon-chain --checkpoint-sync-url=http://localhost:3500
-or
+
+# Explicit usage: Manually specify both URLs (same result as above)
 ./prysm.sh beacon-chain --checkpoint-sync-url=http://localhost:3500 --genesis-beacon-api-url=http://localhost:3500
 ```
 
