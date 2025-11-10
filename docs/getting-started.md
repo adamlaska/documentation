@@ -12,6 +12,17 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 [Prysm](https://github.com/OffchainLabs/prysm) is an [Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/) [proof-of-stake](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/) client written in [Go](https://golang.org). You can use Prysm to participate in Ethereum's [decentralized economy](https://ethereum.org/en/developers/docs/web2-vs-web3/) by [running a node](/install-prysm/install-with-script.md) and, if you have [32 `ETH` to stake](https://ethereum.org/en/staking/), a [validator client](/install-prysm/install-with-script.md#step-5-run-a-validator-using-prysm). If you're new to Ethereum, you may enjoy our beginner-friendly [Nodes and networks](/learn/concepts/nodes-and-networks.md) explainer.
 
+:::info
+
+## Upcoming Hardfork: [Fulu/Osaka December 3rd,2025](https://blog.ethereum.org/2025/11/06/fusaka-mainnet-announcement)
+
+New Requirements: 
+
+- Upgrade Prysm (validator & beacon node) to v7.0.0+
+- Upgrade Execution client based on [ethereum blog](https://blog.ethereum.org/2025/11/06/fusaka-mainnet-announcement)
+- New Networking Bandwidth and Blob storage requirements. read more [here](./concepts/blobs.md)
+  
+:::
 
 The following table of contents provides a descriptive overview of Prysm's documentation:
 
