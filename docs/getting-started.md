@@ -20,7 +20,7 @@ New Requirements:
 
 - Upgrade Prysm (validator & beacon node) to v7.0.0+
 - Upgrade Execution client based on [ethereum blog](https://blog.ethereum.org/2025/11/06/fusaka-mainnet-announcement)
-- New Networking Bandwidth and Blob storage requirements. read more [here](./concepts/blobs.md)
+- New Networking Bandwidth and Blob storage requirements. read more [here](./learn/concepts/blobs.md)
   
 :::
 
