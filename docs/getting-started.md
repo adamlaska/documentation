@@ -19,8 +19,8 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 New Requirements: 
 
 - Upgrade Prysm (validator & beacon node) to v7.0.0+
-- Upgrade Execution client based on [ethereum blog](https://blog.ethereum.org/2025/11/06/fusaka-mainnet-announcement)
-- New Networking Bandwidth and Blob storage requirements. read more [here](./learn/concepts/blobs.md)
+- Upgrade Execution client based on [Ethereum blog](https://blog.ethereum.org/2025/11/06/fusaka-mainnet-announcement)
+- New Networking Bandwidth and Blob storage requirements. For more information about blobs read our [Blobs](./learn/concepts/blobs.md) page
   
 :::
 
