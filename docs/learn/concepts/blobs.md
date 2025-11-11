@@ -11,6 +11,8 @@ import BlobsPng from '@site/static/images/blobs.png';
 
 Only applicable after the Deneb/Cancun Hardfork
 
+Blobs are stored locally as data column sidecars post Fusaka Hardfork
+
 :::
 
 ## Background
@@ -21,12 +23,32 @@ Only applicable after the Deneb/Cancun Hardfork
 
 One design decision in the implementation of EIP-4844 to verify blobs and to enable the future path of proposer-builder separation is the use of [KZG commitments](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html). In order to use KZG commitments a [Trusted Setup](https://vitalik.eth.limo/general/2022/03/14/trustedsetup.html) is needed. For the Deneb hardfork a [KZG Ceremony](https://github.com/ethereum/kzg-ceremony/tree/main) was conducted to create the Trusted Setup. For technical awareness, Prysm loads the Trusted Setup from `prysm/beacon-chain/blockchain/kzg/trusted_setup.json`
 
+### Post Fusaka
+
+[EIP-7594](https://eips.ethereum.org/EIPS/eip-7594) PeerDAS (Peer Data Availability Sampling) is a networking protocol that allows nodes to perform data availability sampling (DAS) to ensure that blob data is available while downloading only a subset of the data. The number of data columns you custody will depend on the number of validators attached to your beacon node.
+
+[EIP-7892](https://eips.ethereum.org/EIPS/eip-7892) BPO (blob parameter only) hardforks that increase the max blob count
+
+| Time    | Epoch | Max Blobs |
+|:--------|:---:|----------:|
+| December 9, 2025, 02:21:11pm UTC   | 412672  | 15  |
+| January 7, 2026, 01:01:11am UTC    | 419072  | 21  |
+
 <img style={{maxWidth: 760 + 'px'}} src={BlobsPng} />
 
 ## Storage Requirements: 
 
+:::warning 
+
+Post Fusaka Hardfork, custody requirements will be dependent on the number of validators you run with and whether you use the `--subscribe-all-data-subnets` flag, converting your node into a super node.
+
+For detailed estimates on requirements, please visit [fusaka-bandwidth-estimation](https://ethpandaops.io/posts/fusaka-bandwidth-estimation/) by the Ethereum Foundation Devops Team.
+
+:::
+
 The most significant impact on node operators is the increased storage requirement. Node runners have a new slightly increased storage requirement 
 
+Example from electra hardfork:
 ```sh
 131928 blob ssz byte size * blobs retention period (18 days or 4,096 epochs) * 32 potential blocks per epoch * 6~9 Blob sidecars per block 
 
@@ -37,8 +59,17 @@ By default these blobs will be retained for 4096 epochs, and Prysm will prune th
 
 Retention periods and storage paths can be configured using the following flags.
 
-### New Flags
+## Network Requirements (Post Fusaka):
 
-`--blob-path`: Location for blob storage. Default location will be a 'blobs' directory next to the beacon db. i.e., `--data-dir=/path/to/storage`
+PeerDAS in the Fusaka hardfork introduces new data column requirements, including a new way to distribute blobs across the network.
+Networking requirements will also depend on the BPO we are on and the number of max blobs Ethereum supports.
 
-`--blob-retention-epochs`: Override the default blob retention period (measured in epochs). The node will exit with an error at startup if the value is less than the default of 4096 epochs. i.e., `--blob-retention-epochs=6000`
+For detailed estimates on requirements, please visit [fusaka-bandwidth-estimation](https://ethpandaops.io/posts/fusaka-bandwidth-estimation/) by the Ethereum Foundation Devops Team.
+
+### Flags
+
+`--blob-path`: Location for blob storage. The default location will be a 'blobs' directory next to the beacon DB. i.e., `--data-dir=/path/to/storage`
+
+`--blob-retention-epochs`: Override the default blob retention period (measured in epochs). The node will exit with an error at startup if the value is less than the default of 4096 epochs. i.e., `--blob-retention-epochs=6000`. This flag is usable for Data columns post-Fusaka.
+
+`--subscribe-all-data-subnets`: Converts your node into a `Super node` which custodies all data columns regardless of the number of connected validators to the node. Use this flag if you need to retrieve blobs regularly. **Warning**: Significantly increases hard work and networking requirements.
