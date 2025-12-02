@@ -184,7 +184,32 @@ TODO
 -->
 
 #### Does Prysm's implementation of checkpoint sync support backfilling?
-Yes. Backfill can be enabled by running the beacon node with the `--enable-experimental-backfill` option. By default Prysm will backfill the last five months worth of blocks.
+Yes. Backfill can be enabled by running the beacon node with the `--enable-backfill` option (previously `--enable-experimental-backfill`, the old flag name is still supported as an alias).
+
+By default, Prysm will backfill according to the `MIN_EPOCHS_FOR_BLOCK_REQUESTS` parameter. This retention period aligns with the weak subjectivity period and ensures sufficient historical data is available.
+
+For more information on blobs and data column storage requirements post-Fulu, see [Blobs](/learn/concepts/blobs.md).
+
+##### Post-Fulu backfill support
+
+Backfill now supports data columns for checkpoint syncs that start after the Fulu hardfork. The backfill service automatically handles both blob sidecars (pre-Fulu) and data column sidecars (post-Fulu) depending on the slot epoch.
+
+##### Blob and data column retention
+
+Prysm retains blobs and data columns for a minimum period to support backfill and serve historical data availability requests:
+
+- **Blob sidecars** (pre-Fulu): Retained for a minimum of 4,096 epochs (approximately 18 days) as specified by `MIN_EPOCHS_FOR_BLOB_SIDECARS_REQUESTS`
+- **Data column sidecars** (post-Fulu): Retained for a minimum of 4,096 epochs as specified by `MIN_EPOCHS_FOR_DATA_COLUMN_SIDECARS_REQUESTS`
+
+You can extend the retention period beyond the minimum using the `--blob-retention-epochs` flag. The node will exit with an error if you attempt to set a value less than 4,096 epochs. For more details on storage requirements and configuration, see [Blobs](/learn/concepts/blobs.md).
+
+##### Backfill configuration flags
+
+`--enable-backfill`: Enables backfill for checkpoint synced nodes. Backfill will only be enabled when this flag is specified on a node using checkpoint sync.
+
+`--backfill-batch-size`: Number of blocks per backfill batch. A larger number will request more blocks at once from peers, but also consume more system memory to hold batches in memory during processing. This has a multiplicative effect with `--backfill-worker-count`. Default: 32.
+
+`--backfill-worker-count`: Number of concurrent backfill batch requests. A larger number will better utilize network resources, up to a system-dependent limit, but will also consume more system memory. This has a multiplicative effect with `--backfill-batch-size`. Default: 2.
 
 #### Can I use checkpoint sync on any network?
 Yes. Checkpoint sync is a network-agnostic feature. You can even use it on local devnets.
