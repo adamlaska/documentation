@@ -209,7 +209,7 @@ You can extend the retention period beyond the minimum using the `--blob-retenti
 
 `--backfill-batch-size`: Number of blocks per backfill batch. A larger number will request more blocks at once from peers, but also consume more system memory to hold batches in memory during processing. This has a multiplicative effect with `--backfill-worker-count`. Default: 32.
 
-`--backfill-worker-count`: Number of concurrent backfill batch requests. A larger number will better utilize network resources, up to a system-dependent limit, but will also consume more system memory. This has a multiplicative effect with `--backfill-batch-size`. Default: 2.
+`--backfill-worker-count`: Number of concurrent backfill batch requests. A larger number will better utilize network resources, up to a system-dependent limit, but will also consume more system memory. This flag interacts multiplicatively with `--backfill-batch-size`. Default: 2.
 
 #### Can I use checkpoint sync on any network?
 Yes. Checkpoint sync is a network-agnostic feature. You can even use it on local devnets.
