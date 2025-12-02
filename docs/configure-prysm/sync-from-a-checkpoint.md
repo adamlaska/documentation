@@ -184,7 +184,7 @@ TODO
 -->
 
 #### Does Prysm's implementation of checkpoint sync support backfilling?
-Yes. Backfill can be enabled by running the beacon node with the `--enable-backfill` option (previously `--enable-experimental-backfill`, the old flag name is still supported as an alias).
+Yes. Enabling Backfill can be done by running the beacon node with the `--enable-backfill` option (previously `--enable-experimental-backfill`; support for the old flag name still exists as an alias).
 
 By default, Prysm will backfill according to the `MIN_EPOCHS_FOR_BLOCK_REQUESTS` parameter. This retention period aligns with the weak subjectivity period and ensures sufficient historical data is available.
 
