@@ -169,7 +169,7 @@ To verify that the checkpoint state you're using is legitimate, follow these ste
 
 :::note
 
-There are many blockchain explorers - we recommend doing your own research to identify the latest, most trustworthy services. We've used `beaconcha.in` only as an example, not as a recommendation.
+There are many blockchain explorers—we recommend doing your own research to identify the latest, most trustworthy services. We've used `beaconcha.in` only as an example, not as a recommendation.
 
 :::
 
@@ -183,8 +183,30 @@ No. It's actually considered *more* secure thanks to the protections against lon
 TODO
 -->
 
-#### Does Prysm's implementation of checkpoint sync support backfilling?
-Yes. Backfill can be enabled by running the beacon node with the `--enable-experimental-backfill` option. By default Prysm will backfill the last five months worth of blocks.
+##### Blob support
+
+Backfill also downloads and stores blob data via DataColumnSidecars, or BlobSidecars for pre-Fulu blocks. Following spec requirements, both types are retained for approximately 18 days (4096 epochs).
+The --blob-retention-epochs flag can be used to specify a longer retention period; however, the node will refuse to start up using a value lower than the spec minimum of 4096. Backfill follows the Custody Group Count of the node, which custodies columns roughly proportional to the effective balance of connected validators.
+
+Saved blob data can be requested via the Beacon API method /eth/v1/beacon/blobs/{block_id}.
+However, Fulu’s DataColumnSidecars can only reconstruct the data needed for this API if the node has custody of at least 64 columns. Nodes won’t voluntarily custody this many columns by default until the effective balance of connected validators totals 2048 `ETH`. However, you can opt in to custody 64 columns using the --semi-supernode flag, which backfill will also follow. The --supernode flag can also be used to custody all 128 columns, but --semi-supernode is sufficient for blob archival, with lower disk and bandwidth requirements.
+
+##### Blob and data column retention
+
+Prysm retains blobs and data columns for a minimum period to support backfill and serve historical data availability requests:
+
+* **Blob sidecars** (pre-Fulu): Retained for a minimum of 4,096 epochs (approximately 18 days) as specified by MIN_EPOCHS_FOR_BLOB_SIDECARS_REQUESTS
+* **Data column sidecars** (post-Fulu): Retained for a minimum of 4,096 epochs as specified by MIN_EPOCHS_FOR_DATA_COLUMN_SIDECARS_REQUESTS
+
+You can extend the retention period beyond the minimum using the `--blob-retention-epochs` flag. The node will exit with an error if you attempt to set a value less than 4,096 epochs. For more details on storage requirements and configuration, see [Blobs](/learn/concepts/blobs.md).
+
+##### Backfill configuration flags
+
+- `--enable-backfill`: Enables backfill for checkpoint synced nodes. Backfill will only be enabled when this flag is specified on a node using checkpoint sync.
+
+- `--backfill-batch-size`: Number of blocks per backfill batch. A larger number will request more blocks from peers at once, but will also consume more system memory to hold batches in memory during processing. This flag interacts multiplicatively with `--backfill-worker-count`. **Default**: 32.
+
+- `--backfill-worker-count`: Number of concurrent backfill batch requests. A larger number will better utilize network resources, up to a system-dependent limit, but will also consume more system memory. This flag interacts multiplicatively with `--backfill-batch-size`. **Default**: 2.
 
 #### Can I use checkpoint sync on any network?
 Yes. Checkpoint sync is a network-agnostic feature. You can even use it on local devnets.
