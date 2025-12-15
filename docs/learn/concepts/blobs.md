@@ -72,4 +72,10 @@ For detailed estimates on requirements, please visit [fusaka-bandwidth-estimatio
 
 `--blob-retention-epochs`: Override the default blob retention period (measured in epochs). The node will exit with an error at startup if the value is less than the default of 4096 epochs. i.e., `--blob-retention-epochs=6000`. This flag is usable for Data columns post-Fusaka.
 
-`--subscribe-all-data-subnets`: Converts your node into a `Super node` which custodies all data columns regardless of the number of connected validators to the node. Use this flag if you need to retrieve blobs regularly. **Warning**: Significantly increases hard work and networking requirements.
+`--subscribe-all-data-subnets`: Converts your node into a `Super node` which custodies all data columns regardless of the number of connected validators to the node. Use this flag if you need to retrieve blobs regularly. 
+
+:::caution Warning
+
+Significantly increases hardware and networking requirements.
+
+:::
