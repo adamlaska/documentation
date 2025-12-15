@@ -14,7 +14,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info
 
-## Upcoming Hardfork: [Fulu/Osaka December 3rd,2025](https://blog.ethereum.org/2025/11/06/fusaka-mainnet-announcement)
+## Hardfork: [Fulu/Osaka](https://blog.ethereum.org/2025/11/06/fusaka-mainnet-announcement)
 
 New Requirements: 
 
