@@ -162,3 +162,5 @@ Lighthouse opted to drop attestations in order to stay live, we opted to be able
 - 18:17:59 — Epoch 200759 begins. 24 of 32 blocks are produced and participation is 81.7%. This epoch is the start of recovery.
 
 - 18:24:23 — Epoch 200760 begins. 27 of 32 blocks are produced with 86.2% participation. This epoch restores finalization.
+
+If you would like to read the original article it can be found on the [Offchain Labs Medium page](https://medium.com/offchainlabs/post-mortem-report-ethereum-mainnet-finality-05-11-2023-95e271dfd8b2).
