@@ -15,28 +15,35 @@ To configure a validator using Prysm with fallback beacon nodes, you can leverag
 ### Step-by-Step Configuration
 
 1. **Run the Validator Client with Fallback Endpoints**:
-   - Start the validator client, specifying multiple beacon node endpoints for fallback. Use the `--beacon-rpc-provider` flag with comma-separated values. For example:
-     ```
-     ./prysm.sh validator \
-       --wallet-dir=/path/to/wallet \
-       --beacon-rpc-provider=localhost:4000,remote-beacon.example.com:4000,another-beacon:4000 \
-       --datadir=/path/to/validator/data \
-       --mainnet \
-       --suggested-fee-recipient=0xYourEthereumAddressForFees
-     ```
-     - **Explanation**:
-       - `--beacon-rpc-provider`: Lists the gRPC endpoints of your beacon nodes. The validator client will distribute requests across them and fall back if one fails (e.g., due to network issues or downtime).
-       - Add more endpoints as needed for additional redundancy.
-       - If using HTTP-based beacon APIs (supported in newer Prysm versions or forks), you can instead use `--beacon-rest-api-provider` with comma-separated HTTP URLs (e.g., `http://localhost:3500,http://remote:3500`). Note: When using `--beacon-rest-api-provider`, you must also enable `--enable-beacon-rest-api` on your beacon node(s).
-       - **Other common flags**:
-         - `--graffiti="YourCustomGraffiti"`: Optional, for [custom block graffiti](/manage-validator/add-graffiti.md).
-         - `--wallet-password-file=/path/to/password.txt`: For non-interactive runs.
-         - `--enable-doppelganger`: Enables doppelganger protection but may interfere with fallbacks in some cases (e.g., if the primary node is down during startup—test this in a dev environment).
 
-:::caution Caution
+   **gRPC** (default): Use `--beacon-rpc-provider` with comma-separated `host:port` pairs (gRPC port, default: 4000):
+   ```
+   ./prysm.sh validator \
+     --wallet-dir=/path/to/wallet \
+     --beacon-rpc-provider=localhost:4000,remote-beacon.example.com:4000,another-beacon:4000 \
+     --datadir=/path/to/validator/data \
+     --mainnet \
+     --suggested-fee-recipient=0xYourEthereumAddressForFees
+   ```
 
-- **gRPC**: If you provide multiple hosts and it connects to the first, it will fall back to the second. If the second host attempt fails, it will fall back to the first host. However, if the first host doesn't work again, it will not attempt the second again.
-- **REST**: It will continually round-robin between hosts, until all retries are exhausted (if set to 0, it will attempt indefinitely).
+   **REST**: Use `--beacon-rest-api-provider` with comma-separated HTTP URLs (REST port, default: 3500). Each beacon node must also be started with `--enable-beacon-rest-api`:
+   ```
+   ./prysm.sh validator \
+     --wallet-dir=/path/to/wallet \
+     --beacon-rest-api-provider=http://localhost:3500,http://remote-beacon.example.com:3500,http://another-beacon:3500 \
+     --datadir=/path/to/validator/data \
+     --mainnet \
+     --suggested-fee-recipient=0xYourEthereumAddressForFees
+   ```
+
+   Other common flags:
+   - `--graffiti="YourCustomGraffiti"`: Optional, for [custom block graffiti](/manage-validator/add-graffiti.md).
+   - `--wallet-password-file=/path/to/password.txt`: For non-interactive runs.
+   - `--enable-doppelganger`: Enables doppelganger protection but may interfere with fallbacks in some cases (e.g., if the primary node is down during startup—test this in a dev environment).
+
+:::note Fallback behavior
+
+Both gRPC and REST use the same sync-status-aware failover logic: the validator checks that each candidate node is both reachable and fully synced before accepting it. If the current endpoint becomes unhealthy or unsynced, the validator tries each remaining host once in order and stops at the first healthy one. When a switch occurs, it logs `Failover succeeded` with the `previousHost`, `newHost`, and `failedAttempts` fields.
 
 :::
 
@@ -59,7 +66,7 @@ To configure a validator using Prysm with fallback beacon nodes, you can leverag
        - This flag works alongside fallbacks: If all endpoints fail health checks (e.g., syncing issues or connectivity loss), the counter increments until reaching the limit, triggering a shutdown. Its design is to improve reliability in multi-node setups, with compatibility for gRPC load balancing and multiple beacon node HTTP resolvers.
 
 3. **Monitoring and Testing**:
-   - Monitor logs for health check messages or fallback switches (e.g., "Switching to fallback beacon node").
+   - Monitor logs for health check messages or fallback switches. When the validator switches endpoints, it logs `Failover succeeded` with `previousHost`, `newHost`, and `failedAttempts` fields. Debug-level logs (e.g., `Node is not ready`) are emitted during health checks.
    - Use tools like [Prometheus and Grafana](/monitoring-alerts-metrics/grafana-dashboard.md) (enabled via `--monitoring-port=8081`) to track validator performance.
    - **Test fallbacks**: Shut down one beacon node and verify the validator continues attesting/proposing via the others.
    - If enabling features like MEV-Boost, add `--http-mev-relay=http://mev-relay.example.com` for external builders, with automatic fallback to local execution if needed.
