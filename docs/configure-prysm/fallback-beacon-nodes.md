@@ -16,7 +16,7 @@ To configure a validator using Prysm with fallback beacon nodes, you can leverag
 
 1. **Run the Validator Client with Fallback Endpoints**:
 
-   **gRPC** (default): Use `--beacon-rpc-provider` with comma-separated `host:port` pairs (gRPC port, default 4000):
+   **gRPC** (default): Use `--beacon-rpc-provider` with comma-separated `host:port` pairs (gRPC port, default: 4000):
    ```
    ./prysm.sh validator \
      --wallet-dir=/path/to/wallet \
@@ -26,7 +26,7 @@ To configure a validator using Prysm with fallback beacon nodes, you can leverag
      --suggested-fee-recipient=0xYourEthereumAddressForFees
    ```
 
-   **REST**: Use `--beacon-rest-api-provider` with comma-separated HTTP URLs (REST port, default 3500). Each beacon node must also be started with `--enable-beacon-rest-api`:
+   **REST**: Use `--beacon-rest-api-provider` with comma-separated HTTP URLs (REST port, default: 3500). Each beacon node must also be started with `--enable-beacon-rest-api`:
    ```
    ./prysm.sh validator \
      --wallet-dir=/path/to/wallet \
@@ -43,7 +43,7 @@ To configure a validator using Prysm with fallback beacon nodes, you can leverag
 
 :::note Fallback behavior
 
-Both gRPC and REST use the same sync-status-aware failover logic: the validator checks that each candidate node is both reachable and fully synced before accepting it. If the current endpoint becomes unhealthy or unsynced, the validator tries each remaining host once in order and stops at the first healthy one. When a switch occurs, it logs `Failover succeeded` with `previousHost`, `newHost`, and `failedAttempts` fields.
+Both gRPC and REST use the same sync-status-aware failover logic: the validator checks that each candidate node is both reachable and fully synced before accepting it. If the current endpoint becomes unhealthy or unsynced, the validator tries each remaining host once in order and stops at the first healthy one. When a switch occurs, it logs `Failover succeeded` with the `previousHost`, `newHost`, and `failedAttempts` fields.
 
 :::
 
