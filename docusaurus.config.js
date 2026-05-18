@@ -48,7 +48,7 @@ module.exports = {
                 position: 'right',
             },
             {
-                href: 'https://discord.gg/prysm',
+                href: 'https://discord.gg/qEZK94mFXP',
                 label: 'Discord',
                 position: 'right',
             },

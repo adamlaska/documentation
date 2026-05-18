@@ -27,7 +27,7 @@ import StatusChecklistPartial from '@site/docs/monitoring-alerts-metrics/partial
 
 <StatusChecklistPartial />
 
-Running into unexpected output? Generate a **troubleshooting report** using our [troubleshooting checklist](/troubleshooting/troubleshooting.md) and share it with us on [Discord](https://discord.gg/prysm).
+Running into unexpected output? Generate a **troubleshooting report** using our [troubleshooting checklist](/troubleshooting/troubleshooting.md) and share it with us on [Discord](https://discord.gg/qEZK94mFXP).
 
 </div>
 

@@ -118,7 +118,7 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
     <p>If you need assistance, head over to one of the following Discord servers:</p>
     <ul>
       <li><a href='https://discord.gg/ethstaker'>r/EthStaker Discord</a></li>
-      <li><a href='https://discord.gg/prysm'>Prysm Discord server</a></li>
+      <li><a href='https://discord.gg/qEZK94mFXP'>Prysm Discord server</a></li>
     </ul>
 
     <p>Next, go to the <a href='https://hoodi.launchpad.ethereum.org/'>Hoodi Launchpad’s deposit data upload page</a> and upload your <code>deposit_data-*.json</code> file. You’ll be prompted to connect your wallet.</p>
