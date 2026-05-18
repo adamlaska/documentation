@@ -156,7 +156,7 @@ If your browser cache was cleared, you're running on a new browser, or validator
 
 ### Reporting Issues
 
-Please create a [github issue](https://github.com/OffchainLabs/prysm) or contact the team on [Discord](https://discord.gg/prysm) to report an issue
+Please create a [github issue](https://github.com/OffchainLabs/prysm) or contact the team on [Discord](https://discord.gg/qEZK94mFXP) to report an issue
 
 ## Contributing
 

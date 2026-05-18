@@ -192,7 +192,7 @@ import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-part
 
 :::tip Congratulations!
 
-You’re now running a post-Merge configuration. If you have any questions, feel free ask them on our [Discord](https://discord.gg/prysm).
+You’re now running a post-Merge configuration. If you have any questions, feel free ask them on our [Discord](https://discord.gg/qEZK94mFXP).
 
 :::
 

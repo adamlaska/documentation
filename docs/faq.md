@@ -18,12 +18,12 @@ import TabItem from '@theme/TabItem';
 
 #### How do I troubleshoot errors?
 
-If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/OffchainLabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/OffchainLabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [Discord](https://discord.gg/prysm) about your error and we'll take a look as soon as possible.
+If your beacon node or validator logs display an `ERROR`, go to our [open issues](https://github.com/OffchainLabs/prysm/issues) to see if someone has reported the same problem before. If this doesn't help, note the **Prysm version you're running** and your **operating system**, and then file a bug report [here](https://github.com/OffchainLabs/prysm/issues/new?assignees=&labels=&template=bug_report.md). You can also ask our community on [Discord](https://discord.gg/qEZK94mFXP) about your error and we'll take a look as soon as possible.
 
 #### My validator is losing money, what's going on?
 
 1. Try restarting your machine and associated processes.
-1. See if your node or validator client crashed. You can view the logs of the process to see if there were any `ERROR` logs. If so, please file a bug report or talk to our team on [Discord](https://discord.gg/prysm). A fatal crash is quite serious and something we'll investigate right away.
+1. See if your node or validator client crashed. You can view the logs of the process to see if there were any `ERROR` logs. If so, please file a bug report or talk to our team on [Discord](https://discord.gg/qEZK94mFXP). A fatal crash is quite serious and something we'll investigate right away.
 2. Check your network connectivity. You can improve this by following our tips [here](/manage-connections/configure-ports-and-firewalls.md) which can help you find better peers, improve attestation effectiveness, and more.
 3. Check your system resource usage, perhaps your node is using excess CPU and RAM. Depending on your operating system, there are different ways to do this.
 
@@ -35,7 +35,7 @@ Losing peers can be due to the following reasons:
 
 1. Your network connectivity has problems. You can check how to improve it with some of our tips [here](/manage-connections/configure-ports-and-firewalls.md).
 2. Prysm is using a ton of memory or system resources and perhaps you ran out of memory. Ensure you meet the minimum specifications for running Prysm specified in our installation pages for your operating system.
-3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/configure-prysm/stay-up-to-date.md) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/prysm) letting us know you had this issue.
+3. A bug in our software that can affect your p2p connectivity. It is known that certain versions have issues with peers on operating systems such as Windows, so you could try [downgrading](/configure-prysm/stay-up-to-date.md) to see if your issue is resolved. If this is the case, talk to our team on [Discord](https://discord.gg/qEZK94mFXP) letting us know you had this issue.
 
 #### My CPU/RAM usage is huge, what’s going on?
 

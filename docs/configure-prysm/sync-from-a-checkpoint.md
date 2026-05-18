@@ -165,7 +165,7 @@ To verify that the checkpoint state you're using is legitimate, follow these ste
    - **Sepolia**: https://sepolia.beaconcha.in/slot/SLOT
    - **Hoodi**: https://hoodi.beaconcha.in/slot/SLOT
    - **Mainnet**: https://beaconcha.in/slot/SLOT
-4. Ensure that the `state_root` reported by the blockchain explorer matches the `state_root` you pulled from your browser. If you don't see a match, feel free to reach out to us on [Discord](https://discord.gg/prysm) and we'll help you troubleshoot.
+4. Ensure that the `state_root` reported by the blockchain explorer matches the `state_root` you pulled from your browser. If you don't see a match, feel free to reach out to us on [Discord](https://discord.gg/qEZK94mFXP) and we'll help you troubleshoot.
 
 :::note
 
@@ -217,7 +217,7 @@ No - checkpoint sync requires a fresh, unused data directory. If you've partiall
 #### Are there any publicly available, trustworthy checkpoint sync endpoints that I can use?
 A [community maintained list](https://eth-clients.github.io/checkpoint-sync-endpoints/) of public Beacon Chain checkpoint sync endpoints is maintained.
 
-Feel free to ask on our [Discord server](https://discord.gg/prysm) if you need help identifying a **Mainnet** checkpoint state provider.
+Feel free to ask on our [Discord server](https://discord.gg/qEZK94mFXP) if you need help identifying a **Mainnet** checkpoint state provider.
 
 #### Do I need to provide a genesis state when using checkpoint sync on Mainnet?
 No. Mainnet's genesis state is embedded within Prysm.

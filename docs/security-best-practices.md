@@ -20,11 +20,11 @@ Note that this document is subject to the [Prysm Terms of Service](https://githu
 The following principles apply generally to staking security:
 
  - **Keep it simple**. Over-engineered solutions tend to increase risk.
- - **Stay up to date**. At a minimum, join the [prysm-dev Google Group](https://groups.google.com/g/prysm-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Prysm Discord server](https://discord.gg/prysm) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
+ - **Stay up to date**. At a minimum, join the [prysm-dev Google Group](https://groups.google.com/g/prysm-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Prysm Discord server](https://discord.gg/qEZK94mFXP) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
  - **Testnet first**. Harden your configuration using testnet [<a href='#footnote-1'>1</a>] before staking with real `ETH` on mainnet.
  - **Simulate risk events**. For each of the aspects within this document, simulate risk events and document your own risk mitigation plans. You can use the [risk mitigation worksheet](#mitigation-worksheet) located at the end of this guide.
  - **Proactively manage risk** You can't completely eliminate risk, but you can minimize it by following the best practices within this guide.
- - **If you’re not sure, ask**. The [Prysm Discord server](https://discord.gg/prysm) and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
+ - **If you’re not sure, ask**. The [Prysm Discord server](https://discord.gg/qEZK94mFXP) and [r/ethstaker](https://www.reddit.com/r/ethstaker) subreddit are full of people who genuinely enjoy helping out.
 
 
 ## Uptime management
@@ -118,7 +118,7 @@ You’ll be managing two types of keys: validator keys and withdrawal keys. Prys
 Ethereum and its client software are constantly improving. This constant change means that unexpected things may happen that require troubleshooting. 
   
  - **Essential**: Expect unexpected things to happen.
- - **Essential**: Be prepared to engage with the [Prysm Discord server](https://discord.gg/prysm), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.gg/ethstaker) if you need help troubleshooting issues.
+ - **Essential**: Be prepared to engage with the [Prysm Discord server](https://discord.gg/qEZK94mFXP), [r/ethstaker](https://www.reddit.com/r/ethstaker/), and the [EthStaker Discord server](https://discord.gg/ethstaker) if you need help troubleshooting issues.
  - **Essential**: When sharing logs, be sure to redact personally identifiable information and metadata that can be used to identify your validator.
  - **Essential**: Learn how to [inspect Prysm's performance](/monitoring-alerts-metrics/monitor-prysm.md).
  - **Essential**: Familiarize yourself with [Prysm's P2P connectivity guidance](/manage-connections/configure-ports-and-firewalls.md).
@@ -155,7 +155,7 @@ Migrating your validator from one machine to another is a delicate process that 
 
 ## Learning resources
 
- - [Prysm Discord server](https://discord.gg/prysm)
+ - [Prysm Discord server](https://discord.gg/qEZK94mFXP)
  - [Ethereum launchpad](https://launchpad.ethereum.org/en/overview)
  - [Ethereum launchpad FAQ](https://launchpad.ethereum.org/en/faq) 
  - [Eth2 rewards and penalties calculator](https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491)
@@ -166,7 +166,7 @@ Migrating your validator from one machine to another is a delicate process that 
 ## Closing remarks
 Participating as a validator can be rewarding public service [<a href='#footnote-13'>13</a>], but it's not without risk. Following these security best practices will help you minimize risk. 
  
-If you have any questions, feel free to visit our [Discord](https://discord.gg/prysm).
+If you have any questions, feel free to visit our [Discord](https://discord.gg/qEZK94mFXP).
 
 
 -----------------------------------

@@ -388,4 +388,4 @@ This section ocntains documents targeted at developers who want to contribute to
 
 ## Need assistance?
 
-Join our [Discord](https://discord.gg/prysm) server - a member of the team or our community will be happy to help.
+Join our [Discord](https://discord.gg/qEZK94mFXP) server - a member of the team or our community will be happy to help.
