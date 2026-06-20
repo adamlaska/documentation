@@ -83,25 +83,24 @@ The beacon node *requesting* the checkpoint state from this node doesn't need th
 
 When you sync via **network request**, the `BeaconState`, `SignedBeaconBlock`, and genesis state files are delivered from one beacon node to another using a peer-to-peer connection. When you sync via **file export/import**, you manually export these files from one beacon node and import them into another. This can be useful if you don't want your beacon node to expose an RPC gateway provider endpoint. Block explorers and client teams can also host these exported files statically as a trusted checkpoint sync source.
 
-Issue the following commands to export the `BeaconState` and `SignedBeaconBlock` files from a synced beacon node using `prysmctl`. Until `prysmctl` is included in Prysm's binary release package, it is necessary to run it from a local source checkout:
+Issue the following commands to export the `BeaconState` and `SignedBeaconBlock` files from a synced beacon node using `prysmctl`. You can run `prysmctl` via a downloaded binary, Docker, or directly with `go run`:
 
-:::info
-
-Installing `prysmctl` via `prysm.sh`, or downloading it from Prysm's GitHub release page, will be possible in an upcoming stable release.
-
-:::
+**Binary** — download the `prysmctl` binary for your platform from the [latest Prysm release page](https://github.com/OffchainLabs/prysm/releases), make it executable, then run:
 
 ```bash
-$ git clone git@github.com:OffchainLabs/prysm.git
-Cloning into 'prysm'...
-remote: Enumerating objects: 167386, done.
-remote: Counting objects: 100% (332/332), done.
-remote: Compressing objects: 100% (234/234), done.
-remote: Total 167386 (delta 118), reused 220 (delta 93), pack-reused 167054
-Receiving objects: 100% (167386/167386), 154.30 MiB | 39.56 MiB/s, done.
-Resolving deltas: 100% (127482/127482), done.
+$ ./prysmctl checkpoint-sync download --beacon-node-host=http://localhost:3500
+```
 
-$ go run github.com/OffchainLabs/prysm/v3/cmd/prysmctl checkpoint-sync download --beacon-node-host=http://localhost:3500
+**Docker**:
+
+```bash
+$ docker run --rm gcr.io/offchainlabs/prysm/cmd/prysmctl:latest checkpoint-sync download --beacon-node-host=http://localhost:3500
+```
+
+**Build from source** (`go run`):
+
+```bash
+$ go run github.com/OffchainLabs/prysm/v7/cmd/prysmctl checkpoint-sync download --beacon-node-host=http://localhost:3500
 ```
 
 You should see the following output if your export was successful:
