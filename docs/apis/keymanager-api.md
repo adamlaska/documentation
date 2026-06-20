@@ -12,7 +12,7 @@ Please refer to the "local keystores APIs" to manage locally stored validator ke
 Go to our [Web3Signer](/manage-wallet/use-web3signer.md) docs page for more information.
 
 ## Authentication
-A JWT token is needed to use the Keymanager APIs. This token is automatically generated and can be found on the second line of the `auth-token` file, located in the Prysm wallet directory. The Prysm wallet directory is defined by the `--wallet-dir` flag default or custom value, and is also displayed in the Validator Client logs at start.
+A JWT token is needed to use the Keymanager APIs. This token is automatically generated and can be found as the contents of the `auth-token` file (a single-line file), located in the Prysm wallet directory. The Prysm wallet directory is defined by the `--wallet-dir` flag default or custom value, and is also displayed in the Validator Client logs at start.
 
 The JWT token itself is directly displayed at the Validator Client start as well, in this log:
 

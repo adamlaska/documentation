@@ -79,7 +79,7 @@ Example:
 validator --web --validators-external-signer-url=http://localhost:9000
 ```
 
-The `--web` flag will enable validator client APIs as well as the web ui ( not supported for `web3signer` ). A JWT token ( found on the second line of the auth-token file) will be generated in the Prysm default wallet directory otherwise defined by `--wallet-dir` flag. the token will also be printed in the console:
+The `--web` flag will enable validator client APIs as well as the web ui ( not supported for `web3signer` ). A JWT token (found as the contents of the `auth-token` file, a single-line file) will be generated in the Prysm default wallet directory otherwise defined by `--wallet-dir` flag. The token will also be printed in the console:
 
 ```sh
 [2022-04-15 14:07:39]  INFO rpc: http://127.0.0.1:7500/initialize?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.ck3J6tcvHcI74IiFjyJqcBH-MmNAq-fMr0ncyZkGvFM

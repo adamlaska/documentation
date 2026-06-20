@@ -312,7 +312,7 @@ docker run -it -v $HOME/Eth2Validators/prysm-wallet-v2:/wallet \
   gcr.io/offchainlabs/prysm/validator:stable \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --wallet-dir=/wallet \
-  --datadir=/validatorDB
+  --datadir=/validatorDB \
   --suggested-fee-recipient=<YOUR_WALLET_ADDRESS>
 ```
 

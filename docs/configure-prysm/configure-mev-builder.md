@@ -216,7 +216,7 @@ Values stored in the bolt db will not be cleared and you will not be able to unr
 
 ### Parallel execution
 
-By default the beacon node will construct the consensus and execution portions of the beacon block in parallel to improve speed and efficiency. `--disable-build-block-parallel` flag can be added to prevent node from building in parallel and will build sequentially. 
+By default the beacon node will construct the consensus and execution portions of the beacon block in parallel to improve speed and efficiency. This is standard behavior with no opt-out flag available.
 
 ### Prioritizing local blocks
 
