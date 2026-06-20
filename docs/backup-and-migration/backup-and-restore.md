@@ -108,13 +108,25 @@ bazel run //cmd/beacon-chain -- db restore --restore-source-file=/path/to/backup
 
 ## Validator client
 
-### Add the backup flag to your validator client 
+### Backing up the database manually
 
-Add the following flag to your validator client:
+Stop the validator client before copying its database files to avoid capturing a partially-written state.
 
-- `--db-backup-output-dir`: Folder path to where backups will be output to, such as `/path/to/mybackups`.
+Your first need to find your base directory. If you don't usually run your validator client with the `--datadir` option, then you can find the base directory by running your validator client with the `--help` option. It will vary depending on the operating system you use.
 
-Now, your validator client will expose an HTTP endpoint `http://monitoringhost:monitoringport/db/backup`, which is `http://127.0.0.1:8081/db/backup` by default. You can hit this endpoint using curl or any other tool you prefer, and a backup will initiate which will be output to your `--db-backup-output-dir` path.
+The validator database file is located at `validator.db` inside your data directory.
+
+:::note Default backup output directory
+
+When a programmatic backup is triggered (for example, by tooling that calls the `Backup` method directly), the output is written to the `backups/` subdirectory of your data directory — for example, `$DATADIR/backups/prysm_validatordb_<timestamp>.backup`.
+
+:::
+
+:::note Removed and deprecated flags
+
+The `--db-backup-output-dir` flag has been removed. The `--enable-db-backup-webhook` flag is deprecated and no longer has any effect — the `/db/backup` HTTP endpoint is no longer registered by the validator client.
+
+:::
 
 
 ### Restoring from a backup
