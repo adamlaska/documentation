@@ -67,10 +67,10 @@ Both consensus and execution clients allow you to customize many of these ports.
 
 :::tip Cloud Users
 
-If running on a cloud provider (AWS, GCP, Azure, etc.), consider blacklisting internal IP ranges to prevent connectivity issues. Add this flag to your beacon node:
+If running on a cloud provider (AWS, GCP, Azure, etc.), consider denylisting internal IP ranges to prevent connectivity issues. Add this flag to your beacon node:
 
 ```
---p2p-blacklist=10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,100.64.0.0/10,169.254.0.0/16
+--p2p-denylist=10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,100.64.0.0/10,169.254.0.0/16
 ```
 
 :::
