@@ -20,10 +20,10 @@ After the Deneb hardfork
 :::
 
 ## `UNKNOWN` State
-Prysm's [validator](/learn/dev-concepts/prysm-validator-client.md) client will report that the state of a particular validator is `UNKNOWN` when it loads validator keys that have not yet submitted a valid deposit to the [Ethereum proof-of-work chain](/terminology#eth1) [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md).
+Prysm's [validator](/learn/dev-concepts/prysm-validator-client.md) client will report that the state of a particular validator is `UNKNOWN` when it loads validator keys that have not yet submitted a valid deposit to the [execution chain](/terminology#execution-layer) [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md).
 
 ## `DEPOSITED` State
-Once a valid transaction has been submitted to the [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md), your [beacon node](/learn/dev-concepts/prysm-beacon-node.md) will detect the presence of the transaction on the ETH1 chain and your [validator](/learn/dev-concepts/prysm-validator-client.md) client will now report being in the `DEPOSITED` state. The validator will get added to the beacon state within the next finalization period as a pending deposit. Learn about execution requestions [here](/learn/concepts/execution-requests.md).
+Once a valid transaction has been submitted to the [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md), your [beacon node](/learn/dev-concepts/prysm-beacon-node.md) will detect the presence of the transaction on the execution chain and your [validator](/learn/dev-concepts/prysm-validator-client.md) client will now report being in the `DEPOSITED` state. The validator will get added to the beacon state within the next finalization period as a pending deposit. Learn about execution requests [here](/learn/concepts/execution-requests.md).
 
 ## `PENDING` State
 Before a deposit can appear in the Beacon Chain, it must pass through [process_pending_deposits](https://github.com/ethereum/consensus-specs/blob/dev/specs/electra/beacon-chain.md#new-process_pending_deposits). Once processed, the depositor—if new—receives a validator index and enters the activation queue. The usual follow-distance rule still withholds deposits during the brief transition window after the Electra hard fork. However, this becomes irrelevant after a few weeks as sufficient epochs get finalized.
@@ -50,10 +50,3 @@ If a slashable event is included in a block while a validator is either `ACTIVE`
 
 ## `EXITED` State
 In the case that the validator has reached the exited state voluntarily, the funds will become withdrawable after 256 epochs (~27 hours). If the validator was slashed, this delay is extended to 4 eeks (2048 epochs*4 or ~36 days). If a slashable event is included in a block before funds have been withdrawn, the validator will move back to the `SLASHING` state causing withdrawal delays to reset.
-
-
-:::warning
-
-Funds will not be able to be withdrawn from validators until transactions are introduced after Ethereum proof-of-stake merges with the current Ethereum chain.
-
-:::

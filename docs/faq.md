@@ -169,7 +169,7 @@ Depositing into Ethereum as a validator is a multi-step process that can require
 
 #### I made a correct deposit and my validator status in Prysm is still UNKNOWN, what’s going on?
 
-There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the eth1 chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the Ethereum launchpad), or (3) you never actually sent a deposit to the right contract address
+There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the execution chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the Ethereum launchpad), or (3) you never actually sent a deposit to the right contract address
 
 #### How can I move my validator to a different computer without getting slashed?
 
@@ -186,7 +186,7 @@ Prysm implements the slashing protection [EIP-3076 standard format](https://eips
 
 While this is possible, we highly recommend against it. Given there are so many things that can go wrong when generating keys and when sending deposits to Ethereum proof-of-stake, we absolutely recommend starting on a clean slate and not reusing any data you used for your testnet runs. Messing something up is not worth the risk.
 
-#### Can I send validator deposits using different ETH1 accounts or should it all be from a single metamask?
+#### Can I send validator deposits using different execution layer accounts or should it all be from a single metamask?
 
 Yes, this is possible however we recommend against it. We recommend you deposit all within the same Ethereum consensus launchpad session from a single metamask instance to keep things simple as it is possible a step could get messed up along the way.
 
@@ -225,4 +225,4 @@ Yes, as of the capella hardfork partial and full withdrawals of validators is en
 
 #### What is balance and what is effective balance?
 
-Your validator balance is the actual amount of `ETH` you have from being a validator in Ethereum. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. It has a max value of 32 `ETH`, but your regular balance is uncapped. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
+Your validator balance is the actual amount of `ETH` you have from being a validator in Ethereum. It can go up or down every epoch depending on your participation. Effective balance is a bit different. It is a value that lags behind your actual balance and is used exclusively to determine rewards and penalties for your validator. For validators with the original `0x00`/`0x01` withdrawal credentials it has a max value of 32 `ETH`, but since the Electra hard fork validators that switch to compounding (`0x02`) credentials can raise their max effective balance up to 2048 `ETH` (see [Execution Requests](/learn/concepts/execution-requests.md)); your regular balance is uncapped either way. You can read more about the purpose of effective balance in this excellent post by Attestant [here](https://www.attestant.io/posts/understanding-validator-effective-balance/).
