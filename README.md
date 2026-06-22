@@ -54,8 +54,8 @@ vercel
 
 ## Maintenance
 
-When Prysm cuts a new release, update the following files:
+When a new version of Prysm is released, update the following files:
 
-- `docusaurus.config.js` — bump `prysmVersion` (line 1) to the new tag (e.g. `"v7.1.5"`). This drives the version badge and release link in the navbar.
+- `docusaurus.config.js` — bump `prysmVersion` (line 1) to the new tag (e.g., `"v7.1.5"`). This drives the version badge and release link in the navbar.
 - `docs/faq.md` — update any hardcoded version strings in example terminal-output blocks to match the new release.
 - `.node-version` — update if the required Node version changes; keep `README.md` in sync.
