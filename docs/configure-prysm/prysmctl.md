@@ -27,7 +27,7 @@ Example of running `prysmctl` by opening a terminal at the installed location af
 ./prysmctl --help
 ```
 
-The binaries can be run through a terminal directly and won't need installation. Please refer to the [list commands](#list-commands section for additional information. 
+The binaries can be run through a terminal directly and won't need installation. Please refer to the [list commands](#list-commands) section for additional information.
 
 ### Install via source
 
@@ -64,7 +64,7 @@ Clone Prysm's [main repository](https://github.com/OffchainLabs/prysm). Switch t
 
 ```sh
 git clone https://github.com/OffchainLabs/prysm && cd prysm
-``````
+```
 
 #### Build `prysmctl`
 
@@ -85,7 +85,7 @@ Bazel will automatically pull and install any dependencies as well, including Go
 docker run -it gcr.io/offchainlabs/prysm/cmd/prysmctl:latest --help
 ```
 
-The `—-help` flag will provide a list of commands, subcommands, and flags to use.
+The `--help` flag will provide a list of commands, subcommands, and flags to use.
 
 Commands can also be found in our [Prysm parameter documentation](/configure-prysm/command-line-options.md)
 
