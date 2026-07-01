@@ -170,6 +170,10 @@
             },
             {
               "type": "doc",
+              "id": "learn/concepts/partial-columns"
+            },
+            {
+              "type": "doc",
               "id": "learn/concepts/slashing"
             },
             {
