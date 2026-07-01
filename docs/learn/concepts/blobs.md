@@ -75,3 +75,5 @@ For detailed estimates on requirements, please visit [fusaka-bandwidth-estimatio
 - `--supernode`: Converts your node into a `Super node` which custodies all data columns regardless of the number of connected validators to the node. Use this flag if you need to retrieve blobs regularly. **Note**: The original flag name `subscribe-all-data-subnets` is aliased. **Warning**: Significantly increases hardware and networking requirements.
 
 - `--semi-supernode`: Custodies just enough data to serve the blobs and blob sidecars beacon API. This mode custodies the minimum number of data columns required for reconstruction (typically half of all columns, e.g., 64 out of 128), providing a middle ground between normal operation and full supernode mode, allowing blob reconstruction while using less storage and bandwidth than a full supernode. **Warning**: Cannot be used with `--supernode`.
+
+- `--partial-data-columns`: Enables the Partial Columns feature for Fulu, which helps reduce your node's bandwidth usage. This feature is **disabled by default**. To learn more about how partial columns save bandwidth and how the feature works, see [this write-up](./partial-columns.md).
