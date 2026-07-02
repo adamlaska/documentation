@@ -187,7 +187,7 @@ TODO
 Backfill also downloads and stores blob data via DataColumnSidecars, or BlobSidecars for pre-Fulu blocks. Following spec requirements, both types are retained for approximately 18 days (4096 epochs).
 The --blob-retention-epochs flag can be used to specify a longer retention period; however, the node will refuse to start up using a value lower than the spec minimum of 4096. Backfill follows the Custody Group Count of the node, which custodies columns roughly proportional to the effective balance of connected validators.
 
-Saved blob data can be requested via the Beacon API method /eth/v1/beacon/blobs/{block_id}.
+Saved blob data can be requested via the Beacon API method `/eth/v1/beacon/blobs/{block_id}`.
 However, Fulu’s DataColumnSidecars can only reconstruct the data needed for this API if the node has custody of at least 64 columns. Nodes won’t voluntarily custody this many columns by default until the effective balance of connected validators totals 2048 `ETH`. However, you can opt in to custody 64 columns using the --semi-supernode flag, which backfill will also follow. The --supernode flag can also be used to custody all 128 columns, but --semi-supernode is sufficient for blob archival, with lower disk and bandwidth requirements.
 
 ##### Blob and data column retention
