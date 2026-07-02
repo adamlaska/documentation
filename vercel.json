@@ -5,6 +5,12 @@
   "installCommand": "npm install",
   "trailingSlash": true,
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/robots.txt",
+      "destination": "/docs/robots.txt"
+    }
+  ],
   "redirects": [
     { "source": "/prysm/docs/(.*)", 
       "destination": "/docs/$1", 
