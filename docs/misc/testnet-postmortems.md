@@ -171,7 +171,7 @@ Showing duplicate values for various topics, where the 00000000 and f071c66c are
 - 22:33:00 Preston confirms the sync genesis time value is set to 0, and that we are likely subscribing to wrong gossip topics
 - 22:35:00 Nishant mentions: “so sync needs to wait after p2p is initialized seems like sync and p2p start at the same time which is our main problem”
 - 22:36:00 Preston reports the ForkDigest method does not need to be a pointer receiver of the p2p service, but can instead be a pure helper function that services can fill in with canonical values from the blockchain service, preventing any potential race conditions
-- 22:39:00 Preston reports the issue is now resolved in his local node after seeing the beacon block p2p received metrics go up p2p_message_received_total{topic="/eth2/f071c66c/beacon_block/ssz_snappy"} 19 
+- 22:39:00 Preston reports the issue is now resolved in his local node after seeing the beacon block p2p received metrics go up `p2p_message_received_total{topic="/eth2/f071c66c/beacon_block/ssz_snappy"} 19`
 
 ### Chain Stuck at Genesis (Incident #6)
 

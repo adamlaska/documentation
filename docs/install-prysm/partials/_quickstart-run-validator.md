@@ -48,16 +48,12 @@ Run the following command to create your mnemonic (a unique and <strong>highly s
   </TabItem>
 </Tabs>
 
- <p>Follow the CLI prompts to generate your keys. The password you choose will be needed later when importing the generated data into the Prysm validator client. This will give you the following artifacts:</p>
-<ol>
-  <li>A <strong>new mnemonic seed phrase</strong>. This is <strong>highly sensitive</strong> and should never be exposed to other people or networked hardware.</li>
-  <li>A <code>validator_keys</code> folder. This folder will contain two files:
-    <ol>
-      <li><code>deposit_data-*.json</code> - contains deposit data that you’ll later upload to the Ethereum launchpad.</li>
-      <li><code>keystore-m_*.json</code> - contains your public key and encrypted private key.</li>
-    </ol>
-  </li>
-</ol>
+Follow the CLI prompts to generate your keys. The password you choose will be needed later when importing the generated data into the Prysm validator client. This will give you the following artifacts:
+
+1. A **new mnemonic seed phrase**. This is **highly sensitive** and should never be exposed to other people or networked hardware.
+2. A `validator_keys` folder. This folder will contain two files:
+   1. `deposit_data-*.json` - contains deposit data that you’ll later upload to the Ethereum launchpad.
+   2. `keystore-m_*.json` - contains your public key and encrypted private key.
 <p>If needed, copy the <code>validator_keys</code> folder to your primary machine. Run the following command to import your keystores, replacing <code>&lt;YOUR_FOLDER_PATH&gt;</code> with the full path to your <code>validator_keys</code> folder:</p>
 
 <Tabs groupId="os" defaultValue="others" values={[

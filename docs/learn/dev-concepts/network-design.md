@@ -280,19 +280,19 @@ func Handler(context.Context, proto.Message, *libp2p.Stream) error
 
 These callback handlers are registered in beacon-chain/sync/handlers/registry.go and each handler must be self contained into its own go file within the handlers package. This isolation of handlers into their own go files keeps the project easier to navigate with tests closer to their implementation and average file lines of code reduced when possible. 
 
-***Handler: BeaconBlocks /eth2/beacon_chain/req/beacon_blocks/1/{ssz,ssz_snappy}***
+**Handler: `BeaconBlocks /eth2/beacon_chain/req/beacon_blocks/1/{ssz,ssz_snappy}`**
 
 Accepts a `*pb.BeaconBlocksRequest` message and responds with a `*pb.BeaconBlocksResponse` message. This handler will query the beacon database for blocks and respond as directed by the request query. 
 
-***Handler: BeaconBlocks /eth2/beacon_chain/req/recent_beacon_blocks/1/{ssz,ssz_snappy}***
+**Handler: `BeaconBlocks /eth2/beacon_chain/req/recent_beacon_blocks/1/{ssz,ssz_snappy}`**
 
 Accepts a `*pb.RecentBeaconBlocksRequest` and responds with `*pb.BeaconBlocksResponse` message. This handler queries the beacon database for blocks by root and responds with the results.
 
-***Handler: Hello /eth2/beacon_chain/req/hello/1/{ssz,ssz_snappy}***
+**Handler: `Hello /eth2/beacon_chain/req/hello/1/{ssz,ssz_snappy}`**
 
 Accepts a `*pb.Handshake` and responds with a `*pb.Handshake`. This handler will receive the handshake and compare it against their own. If the handshakes do not align as defined in the network specification, disconnect from the peer after responding with the handshake. 
 
-***Handler: Goodbye /eth2/beacon_chain/req/goodbye/1/{ssz,ssz_snappy}***
+**Handler: `Goodbye /eth2/beacon_chain/req/goodbye/1/{ssz,ssz_snappy}`**
 
 Accepts a `*pb.Goodbye` does not respond. This handler signals to the P2P library to remove said peer from the peerstore. The stream is closed immediately in this handler.
 
@@ -343,21 +343,21 @@ func Handler(context.Context, proto.Message) error
 
 **Open question:** How does libp2p GossipSub implementation handle re-propagation? Is a message automatically re-propagated through the network or can some validation be checked before relaying the messages to peers? 
 
-**Handler: /eth2/beacon_block/{ssz,ssz_snappy}**
+**Handler: `/eth2/beacon_block/{ssz,ssz_snappy}`**
 Accepts a `*pb.BeaconBlock`. This topic is used for block propagation. The handler must validate the block signature is valid and immediately forward the message in GossipSub. The block may not process, but the trade off is that blocks can reach the edge of the network faster with the bare minimum validation. The handler will pass the beacon block through the same block processing that we have today.
 
-**Handler: /eth2/beacon_attestation/{ssz,ssz_snappy}**
+**Handler: `/eth2/beacon_attestation/{ssz,ssz_snappy}`**
 Accepts a `*pb.Attestation`. The topic is used for attestation propagation. This handler must validate that the attestation votes on a valid block before forwarding the message through the network. Following that validation, the attestation processing will resume through the existing flow.
 
-**Handler: /eth2/voluntary_exit/{ssz,ssz_snappy}**
+**Handler: `/eth2/voluntary_exit/{ssz,ssz_snappy}`**
 
 Accepts a `*pb.VoluntaryExit`. This handler must verify that the exit passes the conditions within `process_voluntary_exit` before forwarding through the network. Following validation, the request is sent through the operations service for processing.
 
-**Handler: /eth2/proposer_slashing/{ssz,ssz_snappy}**
+**Handler: `/eth2/proposer_slashing/{ssz,ssz_snappy}`**
 
 Accepts a `*pb.ProposerSlashing`. This handler must verify the slashing passes the conditions with `process_proposer_slashing` before forwarding through the network. Following validation, the request is sent through the operations service for processing.
 
-**Handler: /eth2/attester_slashing/{ssz,ssz_snappy}**
+**Handler: `/eth2/attester_slashing/{ssz,ssz_snappy}`**
 
 Accepts a `*pb.AttesterSlashing`. This handler must verify the slashing passes the conditions with `process_attester_slashing` before forwarding through the network. Following validation, the request is sent through the operations service for processing.
 
