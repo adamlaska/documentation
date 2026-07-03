@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import { PrysmVersion } from '@site/src/components/version.js';
+import { PrysmVersion, PrysmVersionCommand } from '@site/src/components/version.js';
 
 The HTTP connection between your beacon node and execution node needs to be authenticated using a [JWT token](https://jwt.io/). There are several ways to generate this JWT token:
 
@@ -18,9 +18,7 @@ The HTTP connection between your beacon node and execution node needs to be auth
 
   ## Optional - This command is necessary only if you've previously configured `USE_PRYSM_VERSION`
 
-  <code>
-  SET USE_PRYSM_VERSION=<PrysmVersion/>
-  </code>
+  <PrysmVersionCommand prefix="SET USE_PRYSM_VERSION=" />
 
 
   ## Required
@@ -34,9 +32,7 @@ The HTTP connection between your beacon node and execution node needs to be auth
 
    ## Optional - This command is necessary only if you've previously configured `USE_PRYSM_VERSION`
 
-  <code>
-  export USE_PRYSM_VERSION=<PrysmVersion/>
-  </code>
+  <PrysmVersionCommand prefix="export USE_PRYSM_VERSION=" />
 
 
   ## Required
