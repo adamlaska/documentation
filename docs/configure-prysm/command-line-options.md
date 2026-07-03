@@ -2,6 +2,8 @@
 id: parameters
 title: Command-line options
 sidebar_label: Command-line options
+description: Complete reference of all Prysm command-line flags for beacon-chain, validator, prysmctl, and client-stats, with descriptions and defaults.
+content_type: reference
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
