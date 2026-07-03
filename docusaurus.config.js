@@ -101,5 +101,21 @@ module.exports = {
             },
         ],
         require.resolve("docusaurus-lunr-search"),
+        [
+            '@signalwire/docusaurus-plugin-llms-txt',
+            {
+                siteTitle: 'Prysm Documentation',
+                siteDescription: 'Documentation for Prysm, an Ethereum consensus client written in Go.',
+                content: {
+                    enableMarkdownFiles: true,
+                    enableLlmsFullTxt: true,
+                    includeDocs: true,
+                    includeBlog: false,
+                    includePages: false,
+                    // route.path is matched with baseUrl (/docs/) included, so use a baseUrl-agnostic glob
+                    excludeRoutes: ['**/404/'],
+                },
+            },
+        ],
     ],
 };
