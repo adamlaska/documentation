@@ -9,7 +9,9 @@
     "write-translations": "docusaurus write-translations",
     "version": "docusaurus version",
     "rename-version": "docusaurus rename-version",
-    "swizzle": "docusaurus swizzle"
+    "swizzle": "docusaurus swizzle",
+    "generate-cli-reference": "node scripts/generate-cli-reference.mjs",
+    "check-cli-reference": "node scripts/generate-cli-reference.mjs --check"
   },
   "devDependencies": {
     "@docusaurus/core": "3.10.1",
