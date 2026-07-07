@@ -5,7 +5,7 @@ sidebar_label: Stay up to date
 ---
 
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
-import { PrysmVersion } from '@site/src/components/version.js';
+import { PrysmVersion, PrysmVersionCommand } from '@site/src/components/version.js';
 
 
 <HeaderBadgesWidget />
@@ -185,8 +185,8 @@ To run our latest release with Bazel, you can look up our [releases page](https:
 Edit the systemd files for both validator (`/etc/systemd/system/validator.service`) and beacon (`/etc/systemd/system/beacon.service`). The filename  depends on what you used when you installed, if you forgot the name, just `ls` that directory (`/etc/systemd/system/`) and edit them both. Add the `Environment` key under the `[Service]` group to have <code>Environment     =  USE_PRYSM_VERSION=<PrysmVersion/></code>
   
 Example for the beacon chain:
-<code>
-[Unit]
+
+<PrysmVersionCommand language="ini" template={`[Unit]
 Description     = Ethereum Beacon Chain Service
 Wants           = network-online.target
 After           = network-online.target
@@ -197,11 +197,10 @@ User            = eth
 ExecStart       = /home/eth/prysm/prysm.sh beacon-chain --config-file=/etc/prysm/beacon-chain.yaml
 Restart         = on-failure
 TimeoutStopSec  = 900
-Environment     = USE_PRYSM_VERSION=<PrysmVersion/>
+Environment     = USE_PRYSM_VERSION={version}
 
 [Install]
-WantedBy    = multi-user.target
-</code>
+WantedBy    = multi-user.target`} />
   
 After you finish editing both of the files, you need to reload the service unit
 
