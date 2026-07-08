@@ -80,6 +80,11 @@ Operational security describes aspects of security related to your day-to-day pr
 
 
 ## Operating system security
+
+import APIExposurePartial from '@site/docs/partials/_api-exposure.md';
+
+<APIExposurePartial />
+
 We recommend applying the following security best practices to the operating system (OS) that your client runs on.
  
  - **Essential**: Install only what you need.

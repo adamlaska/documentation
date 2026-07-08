@@ -6,7 +6,6 @@ sidebar_label: Install with Docker
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
@@ -103,6 +102,11 @@ We recommend opening up ports `tcp/13000` and `udp/12000` on your router and fir
 If you're not already running an execution node, refer to our [Quickstart](/install-prysm/install-with-script.md) for beginner-friendly execution node installation instructions.
 
 Next, use Docker to tell your beacon node to connect to your local execution node. Note that `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is either an HTTP endpoint `http://host:port` or an IPC path such as `/path/to/geth.ipc`.
+
+import APIExposurePartial from '@site/docs/partials/_api-exposure.md';
+
+<APIExposurePartial />
+
 
 <Tabs
   groupId="os"
