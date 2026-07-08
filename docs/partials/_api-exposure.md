@@ -6,4 +6,6 @@ These APIs are **not authenticated** and [must not be publicly exposed](/apis/et
 
 Only run with `0.0.0.0` when the container's published ports are protected by your host firewall. As covered in [Configure ports and firewalls](/manage-connections/configure-ports-and-firewalls.md), block inbound traffic to ports `3500` and `4000` from the outside world, and expose them only to trusted hosts (for example, a remote validator client) over a private network or SSH tunnel.
 
+If you need to reach these APIs from beyond a trusted network, put them behind your own authentication layer rather than exposing them directly. Prysm has no built-in API authentication, so the operator is responsible for running a reverse proxy that terminates TLS and enforces access control (such as mutual TLS, an API key, or basic auth) before requests reach the node. Keep the node bound to a private interface or `localhost` and let the proxy be the only public entry point.
+
 :::
