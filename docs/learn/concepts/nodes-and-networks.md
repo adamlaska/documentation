@@ -25,7 +25,7 @@ An Ethereum **node** is a running instance of Ethereum's client software. This s
 
 There are two primary types of nodes in Ethereum: **execution nodes** and **beacon nodes**. Colloquially, a "node" refers to an execution node and beacon node working together. Nodes establish connections with other nodes running on other computers, forming a decentralized peer-to-peer network that processes Ethereum blocks and transactions.
 
-When users stake 32 `ETH` to participate in Ethereum's proof-of-stake consensus mechanism, they use a separate piece of software called a **validator client**, which connects to their Prysm beacon node. This is special piece of software that manages validator keys and duties such as producing new blocks and voting on others' proposed blocks. Validator clients connect to the Ethereum network through beacon nodes, which depend on execution nodes:
+Users that operate validators use a separate **validator client**, which connects to a beacon node. It manages validator keys and duties such as proposing blocks and attesting to others' blocks. Validator clients connect to the Ethereum network through beacon nodes, which depend on execution nodes:
 
 <br />
 
@@ -53,7 +53,7 @@ When users stake 32 `ETH` to participate in Ethereum's proof-of-stake consensus 
       </tr>
       <tr>
         <td><strong>Validator</strong></td>
-        <td>Validator clients are specialized software that let people stake 32 `ETH` as collateral within Ethereum's <strong>consensus layer</strong>. Validators are responsible for proposing blocks within Ethereum's proof-of-stake consensus mechanism, having fully replaced proof-of-work miners after <a href='https://ethereum.org/en/upgrades/merge/'>The Merge</a>. <br /> <br />A validator will talk only to a local beacon node. A validator's beacon node tells the validator what work to do, and broadcasts the validator's work to the Ethereum network as the validator performs its duties.</td>
+        <td>Validator clients are specialized software that manage one or more validators in Ethereum's <strong>consensus layer</strong>. Validators propose blocks and attest to blocks proposed by others. A validator client requests duties from a beacon node and submits signed results through it.</td>
       </tr>
     </tbody>
 </table>
@@ -109,7 +109,7 @@ No. All Ethereum network participants need to run both an execution node and a b
 Mining is a proof-of-work consensus mechanism. Ethereum's consensus is now driven by a proof-of-stake mechanism, which replaces miners with validators.
 
 #### Where do slashers come into play?
-Slashers, like validators, use specialized pieces of consensus-layer client software to fulfill a critical responsibility for the Ethereum network. Slashers attempt to detect and punish malicious validators. Learn more by reading our [Slasher documentation](/configure-prysm/run-a-slasher.md).
+Slashers detect slashable validator messages and submit evidence to the network. They are optional and are not required to operate a validator. Learn more in the [slasher documentation](/configure-prysm/run-a-slasher.md).
 
 #### How do I get testnet `ETH`?
 You can request testnet `ETH` from public faucets. For Sepolia, try the [Sepolia PoW Faucet](https://sepolia-faucet.pk910.de/) or [Alchemy's Sepolia Faucet](https://sepoliafaucet.com/). For Hoodi, check the [Hoodi GitHub repository](https://github.com/eth-clients/hoodi) for available faucets. You can also ask the community for testnet `ETH` on either the [Prysm Discord server](https://discord.gg/qEZK94mFXP) or on [r/ethstaker](https://www.reddit.com/r/ethstaker).

@@ -14,25 +14,25 @@ This page houses definitions to the various technical terms found throughout thi
 The process of voting on the validity of newly created blocks on the beacon chain.
 
 #### Beacon chain
-The Beacon Chain maintains the network's state and manages the validators involved in the consensus process. It oversees the shard chains of Ethereum, which operate in parallel to the main chain, providing a more efficient and decentralized system.
+The consensus chain, which maintains Ethereum's consensus state, coordinates validators and agrees on the canonical chain. Ethereum does not use the originally proposed execution shard chains; it scales rollups with blob data availability.
 
 #### Beacon node
 Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus. A beacon node will talk to other beacon nodes via peer-to-peer networking, to a local execution node, and (optionally) to a local validator.
 
 #### BLS key
-Your validators use a key format known as [BLS](/learn/dev-concepts/bls-cryptography.md), which is used exclusively for staking. Validators have four kinds of BLS keys: validator public key, validator private key, withdrawal public key, and withdrawal private key. only the validator public key can be viewed on staking explorers such as [https://beaconcha.in](https://beaconcha.in), and private keys, which are secret, are used for signing. Not to be confused with an Ethereum address. The validator mnemonic can be used to access all 4 keys which are important for setting the Ethereum address for withdrawing.
+Validators use [BLS](/learn/dev-concepts/bls-cryptography.md) key pairs to sign consensus messages. A validator public key is visible on staking explorers; its private key must remain secret. It is not an Ethereum execution address.
 
 #### BLS to Execution Change
-In order to withdraw your validator, Ethereum needs to associate an **Ethereum execution address** with your validator’s **keys**. Underneath the hood, submitting a bls-to-execution-change (withdrawal) request updates the [withdrawal credentials](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) which tells Ethereum “I want to withdraw my validator balance to this specific Ethereum address”. When you see the terms BLS to Execution or bls_to_exec used, it refers to this action. **note:** withdrawal request and bls-to-execution-change are used interchangeably.
+A BLS-to-execution change updates a validator's withdrawal credentials from BLS (`0x00`) to an Ethereum execution address (`0x01`). It is distinct from an execution-layer withdrawal request, which is used for exits, partial withdrawals, and consolidations after Electra.
 
 #### Canonical head block
-The latest block to be proposed on a blockchain.
+The block selected by fork choice as the head of the canonical chain.
 
 #### Consensus
 A protocol that governs how to choose validators to propose or validate blocks and process transactions. In cases where multiple blocks are at the head of the chain, a fork-choice mechanism selects the "heaviest" chain based on the number of validators voting for the blocks, weighted by the amount of staked ether.
 
 #### Checkpoint
-An endpoint, specific to the Consensus layer, that can include state and verification of the Ethereum blockchain. It allows syncing a node to be faster and takes less space than syncing from genesis.
+A consensus-layer epoch boundary used for finality and attestation votes. A checkpoint sync is a separate bootstrap method that obtains a trusted recent state to accelerate initial sync.
 
 #### Consensus layer
 The consensus client, or Beacon Node, implements the proof-of-stake algorithm, allowing the network to reach agreement based on verified data from the execution client. A validator can also be added to the client, enabling a node to help secure the network.
@@ -60,7 +60,7 @@ A function evaluated by the client that takes, as input, the set of blocks and o
 The process of withdrawing your entire stake on Ethereum, exiting your validator, and withdrawing your entire balance to an Ethereum address of your choosing. Full validator withdrawals need a validator to exit first, which can take time depending on how large the exit queue is. Performing a full withdrawal requires submitting a voluntary exit first.
 
 #### HD wallet mnemonic
-Refer to [Validator mnemonic](#validator-mnemonic].
+Refer to [Validator mnemonic](#validator-mnemonic).
 
 #### JWT token
 JSON Web Token (JWT) is an industry-standard method for decoding, verifying, and generating tokens that securely represent claims between two parties. It serves as a reliable and effective solution for ensuring secure communication (between the Execution and Consensus layers).
@@ -69,10 +69,10 @@ JSON Web Token (JWT) is an industry-standard method for decoding, verifying, and
 A data storage paradigm designed for storing, retrieving, and managing hash tables.
 
 #### Partial validator withdrawal
-The process of withdrawing your validator’s **earnings** only. That is, if you're staking 33.3 `ETH`, you can withdraw 1.3 `ETH` using a partial withdrawal. Your validator does **not** need to exit, and you will continue to validate normally. Partial withdrawals do not go through an exit queue, but will only be processed at a maximum of 16 validators at a time per block.
+An automatic withdrawal of the balance above a validator's maximum effective balance to its execution address. The validator remains active. The protocol limits the number of withdrawals processed in each block.
 
 #### Proof-of-Stake \(PoS\)
-The PoS concept states that a person can mine or validate block transactions according to how many coins they hold. This is a vastly improved iteration on Proof-of-Work \(PoW\), which relies on immense amounts of computational power to advance the state of the blockchain.
+Ethereum's consensus mechanism, in which validators stake ETH and are selected to propose and attest to blocks. It replaced proof-of-work on the Ethereum mainnet.
 
 #### Proposal \(propose\) <a id="propose"></a>
 The process of creating and adding new blocks to the beacon chain.
@@ -87,7 +87,7 @@ A slasher is software that detects slashable events from validators and reports 
 The person or entity managing Ethereum validators.
 
 #### Validator
-Most often refers to a [validator client](#validator-client) instance, but can also refer to an individual that is physically managing a validator client, or the key used for staking.
+An onchain consensus participant identified by a BLS public key. A [validator client](#validator-client) is the software that manages one or more validators.
 
 #### Validator client
 Allows users running the software to stake `ETH`, propose and validate new blocks, earn staking rewards, and staking tips.
@@ -99,7 +99,7 @@ A unique numeric ID assigned to a validator when activated. You can see this val
 A mnemonic in this context is the 24 word secret that you received upon creating your validator(s), which is the ultimate credential that gives you access to withdrawing your validator(s). For many, this was generated when they first interacted with the Ethereum staking CLI to prepare their validator deposits. We will refer to this as your validator mnemonic throughout this document
 
 #### Validator seed phrase
-Refer to [Validator mnemonic](#validator-mnemonic].
+Refer to [Validator mnemonic](#validator-mnemonic).
 
 #### Validator withdrawal credentials
 Each validator has data known as “withdrawal credentials” which can be fetched from your beacon node or from a block explorer such as [https://beaconcha.in](https://beaconcha.in) or [https://beaconscan.com](https://beaconscan.com) by looking at the “deposits” tab and seeing your credentials there. You will need these for this guide.

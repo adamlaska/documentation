@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Ethereum's transition to proof-of-stake is made possible by validators who each stake 32 `ETH` into the [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md). These validators accept the responsibility to uphold the integrity of the Ethereum network in exchange for staking rewards.
+Ethereum proof-of-stake is secured by validators that make an initial deposit and perform consensus duties in exchange for staking rewards. The usual initial deposit is 32 `ETH`; validators using compounding credentials can have a higher maximum effective balance.
 
 Validators are rewarded for maintaining highly available, trustworthy validator client instances. The security best practices in this guide will help you fulfill this responsibility by helping you minimize risk across a variety of security aspects. Within each aspect, you'll find **recommended**, **advanced**, and **Linux-specific** guidance.
 
@@ -20,7 +20,7 @@ Note that this document is subject to the [Prysm Terms of Service](https://githu
 The following principles apply generally to staking security:
 
  - **Keep it simple**. Over-engineered solutions tend to increase risk.
- - **Stay up to date**. At a minimum, join the [prysm-dev Google Group](https://groups.google.com/g/prysm-dev) to receive important updates related to client security and maintenance. We encourage all stakers to join the [Prysm Discord server](https://discord.gg/qEZK94mFXP) and [r/ethstaker](https://www.reddit.com/r/ethstaker). Visit the [Learning Resources](#learning-resources) section at the end of this guide for a short list of resources that we recommend visiting periodically.
+ - **Stay up to date**. Watch the [Prysm releases](https://github.com/OffchainLabs/prysm/releases) and security advisories, and follow the [Prysm Discord server](https://discord.gg/qEZK94mFXP) and [r/ethstaker](https://www.reddit.com/r/ethstaker) for operational updates.
  - **Testnet first**. Harden your configuration using testnet [<a href='#footnote-1'>1</a>] before staking with real `ETH` on mainnet.
  - **Simulate risk events**. For each of the aspects within this document, simulate risk events and document your own risk mitigation plans. You can use the [risk mitigation worksheet](#mitigation-worksheet) located at the end of this guide.
  - **Proactively manage risk** You can't completely eliminate risk, but you can minimize it by following the best practices within this guide.
@@ -181,10 +181,10 @@ Footnotes:
 <strong id='footnote-1'>1</strong>. Learn more about the Hoodi testnet <a href='https://hoodi.launchpad.ethereum.org/'>here on Ethereum.org</a>. <br />
 <strong id='footnote-2'>2</strong>. BitMex recently posted research that provides hard numbers on penalties and rewards: <a href='https://blog.bitmex.com/ethereums-proof-of-stake-system-calculating-penalties-rewards/'>Ethereum's Proof of Stake System - Calculating Penalties and Rewards</a>. Collin Myers has also created an <a href='https://docs.google.com/spreadsheets/d/15tmPOvOgi3wKxJw7KQJKoUe-uonbYR6HF7u83LR5Mj4/edit#gid=1018097491'>Ethereum calculator</a>. <br />
 <strong id='footnote-3'>3</strong>. See <a href='https://www.reddit.com/r/ethstaker/comments/nnwfx1/why_you_should_stop_worrying_about_your/'>Why you should stop worrying about your validator's uptime and start embracing the chaos instead</a>. <br />
-<strong id='footnote-4'>4</strong>. See <a href='https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50'>Eth2 Slashing Prevention Tips</a> to learn more about slashing.<br />
+<strong id='footnote-4'>4</strong>. See the <a href='/backup-and-migration/slashing-protection.md'>slashing protection guide</a> before moving validator keys.<br />
 <strong id='footnote-5'>5</strong>. <a href='https://www.beaconcha.in'>BeaconChain</a> has a mobile app that will alert you when your validator state changes. <br />
 <strong id='footnote-6'>6</strong>. See <a href='https://www.youtube.com/watch?v=txgOVDTemPQ'>How to monitor your ETH 2 Validator with Google Cloud</a> for a demonstration of this type of solution. <br />
-<strong id='footnote-7'>7</strong>. See <a href='https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50'>Eth2 Slashing Prevention Tips</a> by Raul Jordan. <br />
+<strong id='footnote-7'>7</strong>. See the <a href='/backup-and-migration/slashing-protection.md'>slashing protection guide</a>. <br />
 <strong id='footnote-8'>8</strong>. See <a href='https://www.reddit.com/r/ethstaker/comments/oa6m2o/my_validator_got_slashed/'>this discussion on Reddit</a> for an example of how an honest scripting mistake can result in slashing. The Ethereum ecosystem is growing quickly - this requires all participants to exercise an abundance of caution. <br />
 <strong id='footnote-9'>9</strong>. CoinCashew demonstrates firewall configuration best practices <a href='https://www.coincashew.com/coins/overview-eth/archived-guides/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/step-2-configuring-node#enable-firewall'>here</a>. <br />
 <strong id='footnote-10'>10</strong>. CoinCashew demonstrates root account administration <a href='https://www.coincashew.com/coins/overview-eth/testnet-hoodi/step-2-configuring-node'>here</a>. <br />

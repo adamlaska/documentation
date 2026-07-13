@@ -46,7 +46,7 @@ If a slashable event is included in a block while a validator is either `ACTIVE`
   #### [Missed Attestation Penalties](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#rewards-and-penalties-1)
   A penalty equivalent to that incurred by an inactive validator, issued every epoch until the validator leaves the exit queue
   #### [Attack Multiplier Penalty](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#slashings)
-  A penalty proportional to three times the number of other slashings in the past 8192 epochs (4 <abbr title="An eek is a period of 2048 epochs (~9.1 days), it is short for Ethereum week">eeks</abbr>, ~36 days), applied 4096 epochs (2 eeks, ~18 days) after the slashing event was first included in a block. Under normal circumstances this penalty is quite small, however in the event that a large number of slashings occur in a short time frame, this penalty can be as high as 32 `ETH`.
+  An additional correlation penalty is applied after the protocol's slashing window. Its amount depends on other slashings in that window and the validator's effective balance; see the current [consensus specification](https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#slashings) for the formula.
 
 ## `EXITED` State
-In the case that the validator has reached the exited state voluntarily, the funds will become withdrawable after 256 epochs (~27 hours). If the validator was slashed, this delay is extended to 4 eeks (2048 epochs*4 or ~36 days). If a slashable event is included in a block before funds have been withdrawn, the validator will move back to the `SLASHING` state causing withdrawal delays to reset.
+An exited validator becomes withdrawable after its protocol-defined withdrawal delay and any exit queue. Slashed validators have a longer delay. The current timings are defined by the [consensus specification](https://github.com/ethereum/consensus-specs).

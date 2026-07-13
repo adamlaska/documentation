@@ -56,7 +56,7 @@ Slashing is a way for the network to penalize validator actions that can be harm
 
 The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties are relatively small. If you are slashed, you should keep performing your validator duties until you are exited. After being exited, you can withdraw your remaining validator balance using our [withdrawal guide](/manage-validator/withdraw-validator.md).
 
-Our team prepared a blog post on [slashing prevention tips](https://medium.com/prysmatic-labs/eth2-slashing-prevention-tips-f6faa5025f50) you can read to avoid slashings in the future.
+See our [slashing protection guide](/backup-and-migration/slashing-protection.md) before moving a validator or changing its setup.
 
 ### Running Prysm
 
@@ -169,7 +169,7 @@ Depositing into Ethereum as a validator is a multi-step process that can require
 
 #### I made a correct deposit and my validator status in Prysm is still UNKNOWN, what’s going on?
 
-There are a few possibilities. (1) your deposit has not yet been processed by beacon nodes. It takes a while for the beacon node to be able to process logs from the execution chain by design. If you have already waited a few hours and no luck, there is a chance that (2) your deposit did not verify (that is, you used some other method of creating the deposit than our recommended, standard way on the Ethereum launchpad), or (3) you never actually sent a deposit to the right contract address
+There are a few possibilities. Your deposit may not yet have been processed, may be waiting in the activation queue, or may have been submitted incorrectly. Verify it on the [Ethereum staking launchpad](https://launchpad.ethereum.org/) and confirm that the deposit was sent to the correct network and contract.
 
 #### How can I move my validator to a different computer without getting slashed?
 
@@ -207,7 +207,7 @@ If you have a fully synced beacon node, you can fetch your account balance via t
 
 #### Why are some validators making a lot more money than others?
 
-If you look at the [validator leaderboard](https://beaconcha.in/validators/leaderboard), there are some validators at the top that seem to be doing a lot better than others. The reason being that either they (a) got lucky with being assigned to propose more blocks than other validators, or (b) they caught slashable offenses in the network and packed them into their blocks. Slashings are meant to be rare, and Prysm's slasher by default broadcasts slashings it finds to the network so that validators do not selfishly hold on to them. You can actually disable this to selfishly withhold slashings with the `--disable-broadcast-slashings` flag in your beacon node, although don't expect to get rich from slashing other validators. 
+Block-proposal opportunities are random, and proposal rewards can make short-term leaderboard results vary substantially. Do not rely on a slasher for income; it is an optional service enabled explicitly with Prysm's `--slasher` flag.
 
 Overall, keep in mind that no one has an extra advantage as a validator compared to others. Block proposal opportunities are random and it does not matter how powerful your hardware is. A lot of the times the validators near the top simply got lucky.
 
