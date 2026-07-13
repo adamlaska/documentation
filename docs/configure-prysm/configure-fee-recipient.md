@@ -3,7 +3,6 @@ id: fee-recipient
 title: Configure Fee Recipient 
 sidebar_label: Configure Fee Recipient
 ---
-import FeeRecipientPng from '@site/static/images/fee-recipient-ui.png'
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget commaDelimitedContributors="James" />
@@ -201,13 +200,6 @@ New property definitions are as follows:
  - `gas_limit`: A gas limit. Default limit is 30M gwei - `30000000`.
 
 
-
-
-### Advanced: Configure fee recipient through the Web UI (Warning: feature to be deprecated)
-
-<img style={{maxWidth: 700 + 'px'}} src={FeeRecipientPng} /> 
-
-Your fee recipient wallet address can also be set through the [Web UI](/monitoring-alerts-metrics/web-interface.md) dashboard. The Web UI uses the [Key Manager APIs](/apis/keymanager-api.md) to set the fee recipient.
 
 
 ## Frequently asked questions
