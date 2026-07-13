@@ -14,7 +14,7 @@ This page houses definitions to the various technical terms found throughout thi
 The process of voting on the validity of newly created blocks on the beacon chain.
 
 #### Beacon chain
-The consensus chain that maintains Ethereum's consensus state, coordinates validators, and agrees on the canonical chain. Ethereum does not use the originally proposed execution shard chains; it scales rollups with blob data availability.
+The consensus chain, which maintains Ethereum's consensus state, coordinates validators and agrees on the canonical chain. Ethereum does not use the originally proposed execution shard chains; it scales rollups with blob data availability.
 
 #### Beacon node
 Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus. A beacon node will talk to other beacon nodes via peer-to-peer networking, to a local execution node, and (optionally) to a local validator.
@@ -69,10 +69,10 @@ JSON Web Token (JWT) is an industry-standard method for decoding, verifying, and
 A data storage paradigm designed for storing, retrieving, and managing hash tables.
 
 #### Partial validator withdrawal
-An automatic withdrawal of balance above a validator's maximum effective balance to its execution address. The validator remains active. The protocol limits how many withdrawals are processed in each block.
+An automatic withdrawal of the balance above a validator's maximum effective balance to its execution address. The validator remains active. The protocol limits the number of withdrawals processed in each block.
 
 #### Proof-of-Stake \(PoS\)
-Ethereum's consensus mechanism, in which validators stake ETH and are selected to propose and attest to blocks. It replaced proof-of-work on Ethereum mainnet.
+Ethereum's consensus mechanism, in which validators stake ETH and are selected to propose and attest to blocks. It replaced proof-of-work on the Ethereum mainnet.
 
 #### Proposal \(propose\) <a id="propose"></a>
 The process of creating and adding new blocks to the beacon chain.
