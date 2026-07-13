@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Although [beacon nodes](/learn/dev-concepts/prysm-beacon-node.md) handle network synchronization, drawing consensus and performing several other low-level functions, the role of [validators](/terminology#validator) whom stake `ETH` to in order to perform block [proposals](/terminology#proposal-propose-) and [attestations](/terminology#attestation-attest-) are an equally critical component of the Ethereum beacon chain.
+Although [beacon nodes](http://learn/dev-concepts/prysm-beacon-node.md) handle network synchronization, draw consensus, and perform several other low-level functions, the role of [validators](http://terminology/#validator) who stake `ETH` to propose blocks and attest is equally critical to the Ethereum beacon chain.
 
 As mentioned, validators have two responsibilities: to [propose](/terminology#proposal-propose-) (or produce) blocks known as beacon blocks, which contain consensus information about shards across the network, or to [attest](/terminology#attestation-attest-) (or vote on) the validity of blocks that have already been produced.
 
@@ -16,7 +16,7 @@ As mentioned, validators have two responsibilities: to [propose](/terminology#pr
 
 ## How does it work?
 
-A validator instance is permitted to begin participating in the network once 32 `ETH` is locked up in a [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md). Validators are tasked with correctly [proposing](/terminology#proposal-propose-) or [attesting](/terminology#attestation-attest-) to blocks on the beacon chain, and receive either rewards or penalties to the initial deposit based upon their overall performance.
+A validator instance is permitted to begin participating in the network once 32 `ETH` has been locked in a [validator deposit contract](http://learn/dev-concepts/validator-deposit-contract.md). Validators are tasked with correctly [proposing](http://terminology/#proposal-propose-) or [attesting](http://terminology/#attestation-attest-) to blocks on the beacon chain and receive rewards or penalties on their initial deposit based on their overall performance.
 
 If validators act against the protocol, their locked up deposit will be cut in a process known as 'slashing'. Validators that are intermittently offline or do not have a reliable uptime will gradually lose their deposit, eventually leaking enough to be automatically removed from the network entirely. More on this topic can be found in the [Ethereum proof-of-stake economics](https://unlock-protocol.github.io/ethhub/ethereum-roadmap/ethereum-2.0/eth-2.0-economics/) outline.
 
@@ -29,7 +29,7 @@ In order of operations, the client:
 1. Waits for the event log signaling a start to have occurred in the [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md).
 2. Checks if public key corresponding to the validator instance has been activated on the beacon chain.
 3. A validator is assigned to a shard either as a[ proposer](/terminology#proposal-propose-) \(creator\) or [attester](/terminology#attestation-attest-) (voter).
-4. The validator then has a ticker that works every slot (6 seconds). If the slot ticks at the validator's assigned slot, a beacon block is either [proposed](/terminology#proposal-propose-) or [attested](/terminology#attestation-attest-), depending on assigned role.
+4. The validator then has a ticker that works every slot (6 seconds). If the slot ticks at the validator's assigned slot, a beacon block is either [proposed](/terminology#proposal-propose-) or [attested](/terminology#attestation-attest-), depending on the assigned role.
 5. This repeats forever until the validator decides to exit the system voluntarily, or is penalized by the system for either acting maliciously or being idle when assigned tasks to perform.
 
 As mentioned, every validator instance represents 32 `ETH` being staked in the network. In Prysm, this is currently the default; however, the Prysm validator also supports running multiple keypairs that correspond to multiple validators in a single runtime, simplifying the process of deploying several validator instances for those whom want to stake more funds to help secure the network.  To run multiple keypairs, they must be encrypted with the same password and kept in the same directory.
