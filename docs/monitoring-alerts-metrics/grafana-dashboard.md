@@ -155,11 +155,11 @@ This section is currently out of date. Refer to Grafana's [The new unified alert
 
 For those running their node and validators on separate machines, simply modify the pasted `prometheus.yml` data from the earlier step and change any instances of `localhost` to the desired IP. For local networks, the _private IP_ is required. For connections over the internet, the _public facing IP_ will be required.
 
-* [Finding a **private IP**](/manage-connections/configure-ports-and-firewalls.md#private-ip-addresses)
-* [Finding a **public IP**](/manage-connections/configure-ports-and-firewalls.md#public-ip-addresses)
+* [Finding a **private IP**](/manage-connections/configure-ports-and-firewalls.md#determine-your-ip-addresses)
+* [Finding a **public IP**](/manage-connections/configure-ports-and-firewalls.md#determine-your-ip-addresses)
 
 :::info
 
-In case of public IPs, [port forwarding](/manage-connections/configure-ports-and-firewalls.md#port-forwarding) may need to be configured.
+In case of public IPs, [port forwarding](/manage-connections/configure-ports-and-firewalls.md#configure-your-router) may need to be configured.
 
 :::

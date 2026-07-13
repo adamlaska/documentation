@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 This page houses definitions to the various technical terms found throughout this documentation portal. See a word or phrase that should be here? Let us know!
 
-#### Attestation \(attest\) <a id="attest"></a>
+#### Attestation (attest)
 The process of voting on the validity of newly created blocks on the beacon chain.
 
 #### Beacon chain
@@ -74,7 +74,7 @@ An automatic withdrawal of the balance above a validator's maximum effective bal
 #### Proof-of-Stake \(PoS\)
 Ethereum's consensus mechanism, in which validators stake ETH and are selected to propose and attest to blocks. It replaced proof-of-work on the Ethereum mainnet.
 
-#### Proposal \(propose\) <a id="propose"></a>
+#### Proposal (propose)
 The process of creating and adding new blocks to the beacon chain.
 
 #### Pool
