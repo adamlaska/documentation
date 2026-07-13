@@ -8,26 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-Below is a list of third-party block explorer services displaying statistics about Ethereum proof-of-stake.
+These third-party explorers provide Ethereum consensus-layer and validator information:
 
-## [beaconscan.io](https://beaconscan.com/)
-
-## [beaconcha.in](https://beaconcha.in/)
-
-beaconcha.in is a beacon chain explorer maintained by [Bitfly](https://www.bitfly.at).
-
-## [ethstakers.club](https://ethstakers.club/)
-
-Offers similar features to beaconcha.in, capable of monitoring 32,000 validators in real-time and indicating if any validator is set to propose in the next epoch.
-
-## Mirrors and Forks
-
-This sections lists open source mirrors of forks of original, major block explorers.
-
-- [ethscan.org](https://ethscan.org)
-
-Their respective Github repositories are:
-
-- [nobd/ethscan-org](https://github.com/cornucopiaa/ethscan-org)
-
-
+- [beaconcha.in](https://beaconcha.in/) for validator performance, blocks, and network metrics.
+- [beaconscan.com](https://beaconscan.com/) for beacon-chain blocks, validators, and staking statistics.
