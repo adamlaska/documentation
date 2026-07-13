@@ -63,7 +63,7 @@ A large problem in monorepos is, of course, dealing with dependency management. 
 
 Bazel's query tool allows you to create graph visualizations of your entire dependency tree, making it a lot more robust and standardized compared to other methods of managing dependencies in a project.
 
-All dependencies in the Prysm monorepo live in a file called `deps.bzl` at the top-level of the repository [here](https://github.com/OffchainLabs/prysm/blob/develop/deps.bzl).
+Go dependencies are declared in [`go.mod`](https://github.com/OffchainLabs/prysm/blob/develop/go.mod); Bazel dependency definitions live in the repository's Bazel configuration files.
 
 ### How to add new dependencies
 
@@ -73,9 +73,7 @@ Adding new dependencies to Prysm requires specific changes. We have prepared a c
 
 A common question we get is: "where are Prysm's Dockerfiles?". With Bazel, we get a ton of benefits in terms of optimizing our deployment and release process. In particular, we use [`bazel rules docker`](https://github.com/bazelbuild/rules_docker) which provides us the ability to specify a base, barebones image, and essentially builds our binary and creates a Docker container as a simple wrapper over our binaries. 
 
-We do not write our own Dockerfiles, as Bazel provides us a more sandboxed, simple experience with all of its benefits. To see an example use of `bazel rules docker` for how we build a particular package, see [here](https://github.com/OffchainLabs/prysm/blob/aa389c82a157008741450ba1e04d898924734432/tools/bootnode/BUILD.bazel#L36). 
-
-To read comprehensive instructions on how to build Prysm's docker images for your own use, see [here](/install-prysm/install-with-bazel.md).
+See the repository's current build and release configuration for container-image details; this page covers the developer build workflow.
 
 ## Building Production Releases
 
@@ -84,7 +82,7 @@ To read comprehensive instructions on how to build Prysm's docker images for you
 Everything in Prysm can be built with Bazel using
 
 ```sh
-bazel build /...
+bazel build //...
 ```
 
 For example, the beacon node can be built with
@@ -93,12 +91,12 @@ For example, the beacon node can be built with
 bazel build //cmd/beacon-chain --config=release
 ```
 
-The `--config=release` will apply all compile-time optimizations to the code, and build everything including C dependencies and our cryptography from source. Every package in the Prysm monorepo can be build with
+The `--config=release` applies the release build configuration. Every package in the Prysm monorepo can be built with
 
 ```sh
-bazel build
+bazel build //...
 ```
 
 ### With Go
 
-Building Prysm with Go is possible, but it will use precompiled cryptography to build the final executable. Additionally, it will not perform the compile-time optimizations Bazel does, and can have unexpected issues as you are relinquishing reproducible, hermetic builds which Bazel provides. We always recommend Bazel as the only way to run Prysm if you are planning on running it.
+Building with Go is useful for local development and editor tooling. Use the project's documented release process for production artifacts.
