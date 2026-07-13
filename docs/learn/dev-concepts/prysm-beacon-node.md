@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-The beacon-chain node shipped with Prysm is the keystone component of the Ethereum proof-of-stake protocol. It is responsible for running a full [Proof-of-Stake](/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/terminology#propose) and [attested](/terminology#attest) on by [validators](/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P (peer-to-peer) network, which also manages the lifecycle process of active [validator clients](/learn/dev-concepts/prysm-validator-client.md).
+The beacon-chain node shipped with Prysm is the keystone component of the Ethereum proof-of-stake protocol. It is responsible for running a full [Proof-of-Stake](/terminology#proof-of-stake-pos) blockchain, known as a beacon chain, which uses distributed consensus to agree on blocks both [proposed](/terminology#proposal-propose-) and [attested](/terminology#attestation-attest-) on by [validators](/terminology#validator) in the network. Beacon nodes communicate their processed blocks to their peers via a P2P (peer-to-peer) network, which also manages the lifecycle process of active [validator clients](/learn/dev-concepts/prysm-validator-client.md).
 
 ![Beacon node](/images/prysm-beacon-chain.png)
 
@@ -29,13 +29,13 @@ We isolate each of these services into separate packages, each responsible for i
 
 ## Blockchain service
 
-The blockchain service is arguably the most important part of the project, as it allows the network to reach consensus on the state of the protocol itself. It is responsible for handling the lifecycle of blocks, and applying the [fork choice rule](/terminology#fork-choice-rule) and [state transition function](/terminology#state-transition-function) provided by the [core package](#core-package) to advance the beacon chain.
+The blockchain service is arguably the most important part of the project, as it allows the network to reach consensus on the state of the protocol itself. It is responsible for handling the lifecycle of blocks, and applying the [fork choice rule](/terminology#fork-choice-rule) and state transition function provided by the [core package](#core-package) to advance the beacon chain.
 
 In Ethereum, blocks can be proposed in intervals known as _slots_, where each slot is a period of 12 seconds. During a slot, proposers are assigned to create and send blocks into the beacon node for acceptance. It is possible, however, that the proposer may fail to do their job at their assigned slot; in this case, the blockchain service processes skipped slots appropriately to ensure that the chain does not stall.
 
 ## Operations service
 
-The operations service handles important information contained in blocks on the beacon chain, such as voluntary validator exits, [proposals](/terminology#propose), [attestations](/terminology#attest), slashings and more. The operation is received from the [sync service](#sync-service) via the [P2P network](/learn/dev-concepts/p2p-networking.md), or from data the node retrieves locally.
+The operations service handles important information contained in blocks on the beacon chain, such as voluntary validator exits, [proposals](/terminology#proposal-propose-), [attestations](/terminology#attestation-attest-), slashings and more. The operation is received from the [sync service](#sync-service) via the [P2P network](/learn/dev-concepts/p2p-networking.md), or from data the node retrieves locally.
 
 ## Core package
 
@@ -54,4 +54,3 @@ As the beacon node will need to frequently access information and one cannot rel
 ## Public RPC server
 
 The public RPC server is one of the most critical components of the beacon node. It implements a variety of methods that [validators ](/terminology#validator)connected to the node can query and obtain assignments to propose or attest blocks. The API is defined in a [protobuf](https://developers.google.com/protocol-buffers/) formatted file, and any client that implements the client side of these methods can connect via gRPC to the beacon node and begin requesting data from its public endpoints.
-
