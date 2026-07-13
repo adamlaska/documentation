@@ -8,11 +8,9 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-:::danger Deprecated
+For Ethereum and consensus-layer resources, see [Ethereum reading resources](/learn/ethereum-reading.md).
 
-This page is deprecated and no longer maintained. It may not have accurate information.
-
-:::
+## Go resources
 
 This page serves material that is necessary to catch up with the current state of Ethereum development, and equips readers with the knowledge required to begin making meaningful contributions to the Prysm project. Whether you are an expert on all things Ethereum or are new to the blockchain world entirely, there are appropriate resources here that will help you get up to speed swiftly.
 
@@ -156,3 +154,7 @@ After reading the sharding material for part-time contributors, it is important 
 * [The Go Programming Language Tour](http://tour.golang.org/)
 * [Getting Started With Go](http://www.youtube.com/watch?v=2KmHtgtEZ1s)
 * [Go Official Website](https://golang.org/)
+* [The Go Programming Language](https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440)
+* [Ethereum Development with Go](https://goethereumbook.org/)
+* [How to Write Go Code](https://go.dev/doc/code)
+* [A Tour of Go](https://go.dev/tour/)

@@ -19,7 +19,7 @@ Once you are a bit more familiar with the concepts behind Ethereum and are ready
 To develop Prysm, you'll need the following:
 
 - A modern Windows, macOS, or Linux operating system
-- Go 1.25 version installed, download and install [here](https://golang.org/dl/)
+- The Go version declared in Prysm's [`go.mod`](https://github.com/OffchainLabs/prysm/blob/develop/go.mod), installed from [go.dev](https://go.dev/dl/)
 - The `git` package installed
 - A code editor such as [Visual Studio Code](https://code.visualstudio.com/download) or Jetbrains' [Goland IDE](https://www.jetbrains.com/go/) or your preferred one
 
@@ -42,7 +42,7 @@ go version
 
 Example output:
 ```sh
-go version go1.25.0 darwin/arm64
+go version go1.x.y darwin/arm64
 ```
 
 ### Building and testing Prysm with Go
@@ -151,13 +151,13 @@ Each time you begin a set of changes, ensure that you are working on a new branc
 To create a local branch for `git` to checkout, issue the command:
 
 ```sh
-    git checkout -b feature-in-progress-branch
+    git switch -c feature-in-progress-branch
 ```
 
 To checkout a branch you have already created:
 
 ```sh
-    git checkout feature-in-progress-branch
+    git switch feature-in-progress-branch
 ```
 
 **Preparing your commit**
@@ -209,14 +209,14 @@ The code from the Prysm repository is inserted between `<<<` and `===` while the
 When you are ready, use git push to move your local copy of the changes to your fork of the repository on GitHub.
 
 ```sh
-    git push myrepo feature-in-progress-branch
+    git push myprysmrepo feature-in-progress-branch
 ```
 
 #### Opening a pull request
 
 :::info
 
-If your change is user facing, ensure that your changeset includes an entry to the `CHANGELOG.md` file!
+Follow the repository's current pull-request template and changelog guidance.
 
 :::
 
