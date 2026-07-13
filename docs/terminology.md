@@ -10,7 +10,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 This page houses definitions to the various technical terms found throughout this documentation portal. See a word or phrase that should be here? Let us know!
 
-#### Attestation \(attest\) <a id="attest"></a>
+#### Attestation (attest)
 The process of voting on the validity of newly created blocks on the beacon chain.
 
 #### Beacon chain
@@ -74,7 +74,7 @@ The process of withdrawing your validator’s **earnings** only. That is, if you
 #### Proof-of-Stake \(PoS\)
 The PoS concept states that a person can mine or validate block transactions according to how many coins they hold. This is a vastly improved iteration on Proof-of-Work \(PoW\), which relies on immense amounts of computational power to advance the state of the blockchain.
 
-#### Proposal \(propose\) <a id="propose"></a>
+#### Proposal (propose)
 The process of creating and adding new blocks to the beacon chain.
 
 #### Pool

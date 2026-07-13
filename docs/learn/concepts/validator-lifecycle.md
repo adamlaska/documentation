@@ -20,7 +20,7 @@ After the Deneb hardfork
 :::
 
 ## `UNKNOWN` State
-Prysm's [validator](/learn/dev-concepts/prysm-validator-client.md) client will report that the state of a particular validator is `UNKNOWN` when it loads validator keys that have not yet submitted a valid deposit to the [execution chain](/terminology#execution-layer) [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md).
+Prysm's [validator](/learn/dev-concepts/prysm-validator-client.md) client will report that the state of a particular validator is `UNKNOWN` when it loads validator keys that have not yet submitted a valid deposit to the [execution chain](/terminology.md#execution-layer) [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md).
 
 ## `DEPOSITED` State
 Once a valid transaction has been submitted to the [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md), your [beacon node](/learn/dev-concepts/prysm-beacon-node.md) will detect the presence of the transaction on the execution chain and your [validator](/learn/dev-concepts/prysm-validator-client.md) client will now report being in the `DEPOSITED` state. The validator will get added to the beacon state within the next finalization period as a pending deposit. Learn about execution requests [here](/learn/concepts/execution-requests.md).
@@ -31,7 +31,7 @@ Before a deposit can appear in the Beacon Chain, it must pass through [process_p
 Only a capped number of pending deposits get handled each epoch. Because the queue also includes balance top‑ups, not every item results in a new validator. The activation churn limit is unchanged: the chain may activate 4 – 8 validators per finalized epoch, the exact number scaling with the total active‑validator count. When a validator reaches the front of the queue, it receives an activation_epoch. The validator becomes active four to five epochs later—about 31 minutes in real-time.
 
 ## `ACTIVE` State
-Once the activation epoch arrives, the validator is activated and assigned responsibilities, including [proposing](http://terminology/#proposal-propose-) or [attesting](http://terminology/#attestation-attest-) to blocks on the beacon chain. Validators receive rewards or penalties on their initial deposit based on their overall performance. If a validator’s balance drops below 16 `ETH` (typically due to inactivity), it will be ejected. Ejections are treated the same as voluntary exits.
+Once the activation epoch arrives, the validator is activated and assigned responsibilities, including [proposing](../../terminology.md#proposal-propose) or [attesting](../../terminology.md#attestation-attest) to blocks on the beacon chain. Validators receive rewards or penalties on their initial deposit based on their overall performance. If a validator’s balance drops below 16 `ETH` (typically due to inactivity), it will be ejected. Ejections are treated the same as voluntary exits.
 
 ## Withdrawals
 Validators that have been active and have a validator index (including validators that are slashed/exited) can initiate a [BLStoExecutionChange](https://github.com/ethereum/consensus-specs/blob/dev/specs/capella/beacon-chain.md#blstoexecutionchange) request that changes its `withdrawal_credentials` which begins the withdrawal process. Once the `withdrawal_credentials` are changed withdrawals will automatically be processed at the rate of 16 per block. Fully exited validators will also be fully withdrawn once withdrawals are initiated. Learn more in our [withdrawal guide](/manage-validator/withdraw-validator.md).
