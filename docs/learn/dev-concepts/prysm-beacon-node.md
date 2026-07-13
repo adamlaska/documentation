@@ -29,13 +29,13 @@ We isolate each of these services into separate packages, each responsible for i
 
 ## Blockchain service
 
-The blockchain service is arguably the most important part of the project, as it enables the network to reach consensus on the protocol's state. It is responsible for handling the lifecycle of blocks, and applying the [fork choice rule](http://terminology/#fork-choice-rule) and state transition function provided by the [core package](http://#core-package) to advance the beacon chain.
+The blockchain service is arguably the most important part of the project, as it enables the network to reach consensus on the protocol's state. It is responsible for handling the lifecycle of blocks, and applying the [fork choice rule](/terminology#fork-choice-rule) and state transition function provided by the [core package](#core-package) to advance the beacon chain.
 
 In Ethereum, blocks can be proposed in intervals known as _slots_, where each slot is a period of 12 seconds. During a slot, proposers are assigned to create and send blocks into the beacon node for acceptance. It is possible, however, that the proposer may fail to do their job at their assigned slot; in this case, the blockchain service processes skipped slots appropriately to ensure that the chain does not stall.
 
 ## Operations service
 
-The operations service handles important information contained in blocks on the beacon chain, such as voluntary validator exits, [proposals](http://terminology/#proposal-propose-), [attestations](http://terminology/#attestation-attest-), slashings, and more. The operation is received from the [sync service](http://#sync-service) via the [P2P network](http://learn/dev-concepts/p2p-networking.md), or from data the node retrieves locally.
+The operations service handles important information contained in blocks on the beacon chain, such as voluntary validator exits, [proposals](/terminology#proposal-propose-), [attestations](/terminology#attestation-attest-), slashings, and more. The operation is received from the [sync service](#sync-service) via the [P2P network](/learn/dev-concepts/p2p-networking.md), or from data the node retrieves locally.
 
 ## Core package
 

@@ -267,7 +267,7 @@ The last validated checkpoint is updated only when we finalize a new checkpoint 
 ## 4. Some edge cases and unsolved problems
 
 ### 4.1 Justification reversal after pruning
-Most of the edge cases with optimistic sync occur when the payload is invalid. We have already described the situation with [Forkchoice Poisoning](http://#24-forkchoice-poisoning). The following similar situations have been described in issues [10782](https://github.com/OffchainLabs/prysm/issues/10782) and [10777](https://github.com/OffchainLabs/prysm/issues/10777). They are variations of the same phenomenon: an INVALID chain is imported, and it updates justification; even though the justification checkpoint is VALID, the node may be deadlocked.
+Most of the edge cases with optimistic sync occur when the payload is invalid. We have already described the situation with [Forkchoice Poisoning](#24-forkchoice-poisoning). The following similar situations have been described in issues [10782](https://github.com/OffchainLabs/prysm/issues/10782) and [10777](https://github.com/OffchainLabs/prysm/issues/10777). They are variations of the same phenomenon: an INVALID chain is imported, and it updates justification; even though the justification checkpoint is VALID, the node may be deadlocked.
 
 Consider the following diagram:
 
