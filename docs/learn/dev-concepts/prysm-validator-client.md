@@ -7,7 +7,6 @@ sidebar_label: Validator client
 import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
-
 Although [beacon nodes](/learn/dev-concepts/prysm-beacon-node.md) handle network synchronization, draw consensus, and perform several other low-level functions, the role of [validators](../../terminology.md#validator) who stake `ETH` to propose blocks and attest is equally critical to the Ethereum beacon chain.
 
 As mentioned, validators have two responsibilities: to [propose](../../terminology.md#proposal-propose) (or produce) blocks known as beacon blocks, which contain consensus information about shards across the network, or to [attest](../../terminology.md#attestation-attest) (or vote on) the validity of blocks that have already been produced.
@@ -15,7 +14,6 @@ As mentioned, validators have two responsibilities: to [propose](../../terminolo
 ![Validator](/images/prysm-validator.png)
 
 ## How does it work?
-
 A validator instance is permitted to begin participating in the network once 32 `ETH` has been locked in a [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md). Validators are tasked with correctly [proposing](../../terminology.md#proposal-propose) or [attesting](../../terminology.md#attestation-attest) to blocks on the beacon chain and receive rewards or penalties on their initial deposit based on their overall performance.
 
 If validators act against the protocol, their locked up deposit will be cut in a process known as 'slashing'. Validators that are intermittently offline or do not have a reliable uptime will gradually lose their deposit, eventually leaking enough to be automatically removed from the network entirely. More on this topic can be found in the [Ethereum proof-of-stake economics](https://unlock-protocol.github.io/ethhub/ethereum-roadmap/ethereum-2.0/eth-2.0-economics/) outline.
