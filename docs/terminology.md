@@ -87,7 +87,7 @@ A slasher is software that detects slashable events from validators and reports 
 The person or entity managing Ethereum validators.
 
 #### Validator
-An on-chain consensus participant identified by a BLS public key. A [validator client](#validator-client) is the software that manages one or more validators.
+An onchain consensus participant identified by a BLS public key. A [validator client](#validator-client) is the software that manages one or more validators.
 
 #### Validator client
 Allows users running the software to stake `ETH`, propose and validate new blocks, earn staking rewards, and staking tips.
