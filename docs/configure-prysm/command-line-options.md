@@ -237,7 +237,7 @@ USAGE:
    validator [options] command [command options] [arguments...]
 
 VERSION:
-  Prysm/v7.1.6/1fc46453cf9dfb3aaf2a80f9f90f87f96e89cdd3. Built at: 2026-07-01 13:13:22+00:00
+  Prysm/v7.1.7/8db5927c7d6bd321f9bb09423349447f2dcacb1e. Built at: 2026-07-10 15:28:56+00:00
 
 global OPTIONS:
    wallet                       Defines commands for interacting with Ethereum validator wallets.
@@ -292,7 +292,7 @@ rpc OPTIONS:
   --beacon-rest-api-headers value                            Comma-separated list of key value pairs to pass as headers for all HTTP calls to the beacon node. 
                                                                To provide multiple values for the same key, specify the same key for each value. 
                                                                Example: --grpc-headers=key1=value1,key1=value2,key2=value3
-  --beacon-rest-api-provider value                           Beacon node REST API provider endpoint. (default: "http://127.0.0.1:3500")
+  --beacon-rest-api-provider value                           Beacon node REST API provider endpoint. Use a comma-separated list for ordered failover; the first endpoint is primary, and failover wraps back to the first after the last. (default: "http://127.0.0.1:3500")
   --beacon-rpc-provider value                                WARNING: The gRPC API will remain the default and fully supported through v8 (expected in 2026) but will be eventually removed in favor of REST API..
                                                                Beacon node RPC provider endpoint. (default: "127.0.0.1:4000")
   --grpc-headers value                                       WARNING: The gRPC API will remain the default and fully supported through v8 (expected in 2026) but will be eventually removed in favor of REST API..
@@ -381,10 +381,10 @@ Refer to the [Use `prysmctl`](prysmctl.md) for `prysmctl` download and installat
 
 ```
 NAME:
-   prysmctl-v7.1.6-linux-amd64 - A new cli application
+   prysmctl-v7.1.7-linux-amd64 - A new cli application
 
 USAGE:
-   prysmctl-v7.1.6-linux-amd64 [global options] command [command options]
+   prysmctl-v7.1.7-linux-amd64 [global options] command [command options]
 
 COMMANDS:
    checkpoint-sync, cpt-sync  commands for managing checkpoint sync
