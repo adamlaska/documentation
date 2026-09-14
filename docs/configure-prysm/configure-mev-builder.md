@@ -87,7 +87,7 @@ There are risks to using a builder which may result in missed rewards, missed pr
   values={[{label: 'Add Builder', value: 'add'},{label: 'Remove Builder', value: 'remove'}]}>
 <TabItem value="add">
 
-## 1. Validator Client: register validator
+<h2 id="1-validator-client-register-validator">1. Validator Client: register validator</h2>
 
 To `register` the validator against the builder and enable the use of custom builders, the `proposer-settings` will need to be configured.
 
@@ -95,29 +95,29 @@ It is **recommended** to configure with the validator client with the `--suggest
 **note:**  `--proposer-settings-file` or `--proposer-settings-url` flags with builder settings will override values provided from `--suggested-fee-recipient` and `--enable-builder`flags.
 
 
-## 2. Beacon Node: connect to the builder
+<h2 id="2-beacon-node-connect-to-the-builder">2. Beacon Node: connect to the builder</h2>
 
 To use a builder the beacon node needs to start with the following configuration:
 
-- `--http-mev-relay` flag pointed to any [Builder API](https://ethereum.github.io/builder-specs/) compatible endpoint. The most common use case is to target a [MEV-Boost](https://boost.flashbots.net/) instance. A less common use case is to directly target a relay ([5. Builder: connected via relay URL](#5-builder-connected-via-relay-url)).
+- `--http-mev-relay` flag pointed to any [Builder API](https://ethereum.github.io/builder-specs/) compatible endpoint. The most common use case is to target a [MEV-Boost](https://boost.flashbots.net/) instance. A less common use case is to directly target a relay (<a href="#5-builder-connected-via-relay-url">5. Builder: connected via relay URL</a>).
 
 Each relay's URL will correspond to a specific network and will need to be chosen accordingly, i.e., running a beacon node on mainnet will require the mainnet relay.
 
 
-## 3. Is builder configured?
+<h2 id="3-is-builder-configured">3. Is builder configured?</h2>
 
 When a validator is proposing a block, the following is checked before attempting to use the builder through the relay:
 - `--http-mev-relay` flag was provided and is pointed to MEV-Boost or an active relay of the correct network
 - circuit breaker is not triggered 
 - validator is registered (beacon API was successfully called and validator registration info is stored in the beacon node's db)
 
-If all checks are satisfied, then we go to [Step 5](#5-builder-connected-via-relay-url) which will be used to get the execution payload (which contains the transactions) and build a blinded block. However, if the checks do not pass, then the beacon node will proceed to [Step 4](#4-local-execution-client-kept-in-sync-and-up-to-date).
+If all checks are satisfied, then we go to <a href="#5-builder-connected-via-relay-url">Step 5</a> which will be used to get the execution payload (which contains the transactions) and build a blinded block. However, if the checks do not pass, then the beacon node will proceed to <a href="#4-local-execution-client-kept-in-sync-and-up-to-date">Step 4</a>.
 
-## 4. Local execution client: kept in sync and up to date
+<h2 id="4-local-execution-client-kept-in-sync-and-up-to-date">4. Local execution client: kept in sync and up to date</h2>
 
 Local execution clients such as Geth or Nethermind must continue to run as usual even while using a builder and will be used in case the builder does not pass the `Is Builder Configured?` check. The execution client should be synced and running alongside your beacon node, and earnings from the block will be compared to the earnings from the builder's payload. If the local execution payload fails then the entire function will fail.
 
-## 5. Builder: connected via relay URL
+<h2 id="5-builder-connected-via-relay-url">5. Builder: connected via relay URL</h2>
 
 The EthStaker community provides a list of some of the relays that can be used as well as any censorship they may have [here](https://github.com/eth-educators/ethstaker-guides/blob/main/MEV-relay-list.md). You can also run your own relay locally such as MEV-Boost but each relay on the list will have their own instructions on how to run it. If running your own relay, instead of using a provided URL due to latency, you will simply need to update the `--http-mev-relay` flag on your beacon node with the appropriate URL for the specific network in use. The relay will connect to a builder which connects to block searchers. 
 
@@ -130,14 +130,14 @@ Make sure you are using the correct version that supports the current version of
 </TabItem>
 <TabItem value="remove">
 
-## 1. Validator Client: unregister validator
+<h2 id="1-validator-client-unregister-validator">1. Validator Client: unregister validator</h2>
 
 Update the following configurations and restart the validator client to stop the periodic registration of the validator. 
 - remove the `--enable-builder` flag.
 - remove the `--suggested-gas-limit` flag, though it should already be disabled once removing the `--enable-builder` flag.
 - remove all wanted references of the `builder` field from the associated file/json for the validators you no longer want to register within the `--proposer-settings-file` and `--proposer-settings-url` flag.
 
-## 2. Beacon Node: remove builder related flags
+<h2 id="2-beacon-node-remove-builder-related-flags">2. Beacon Node: remove builder related flags</h2>
 
 The following flag should be removed to disable builder use on the beacon node:
  - `--http-mev-relay` flag
@@ -153,15 +153,15 @@ The following flags will be disabled after this flag is removed, and can safely 
  - `--max-builder-epoch-missed-slots`
  - `--local-block-value-boost`
 
-## 3. Is builder configured?
+<h2 id="3-is-builder-configured-2">3. Is builder configured?</h2>
 
 Once the appropriate flags are fully removed this check shouldn't pass and will fall back to local execution.
 
-## 4. Local execution client: kept the same
+<h2 id="4-local-execution-client-kept-the-same">4. Local execution client: kept the same</h2>
 
 The execution client can safely continue to run "as-is" with no changes. Once the validator client and beacon node have their settings updated and restarted without builder changes, blocks will continue to be produced through with the payloads from local execution.
 
-## 5. Builder: remove relay URL
+<h2 id="5-builder-remove-relay-url">5. Builder: remove relay URL</h2>
 
 removing the `--http-mev-relay` flag from the beacon node will disconnect the builder. Once removed, you can safely turn off your builder related services such as your MEV-Boost or relays.
 
