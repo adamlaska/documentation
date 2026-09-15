@@ -24,7 +24,7 @@ import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidi
 
 <div className='hide-tabs'>
 
-import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.md';
+import JwtGuidancePartial from '@site/docs/partials/_jwt-guidance-partial.mdx';
 
 <JwtGuidancePartial />
 
