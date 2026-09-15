@@ -54,7 +54,7 @@ If that still does not help, please file an issue with our team on Github [here]
 
 Slashing is a way for the network to penalize validator actions that can be harmful to the Ethereum proof-of-stake network. At a high level, a single validator proposing two conflicting blocks or votes or trying to rewrite the history of the chain is considered malicious and such validators will get slashed. Unfortunately, there is no way for the protocol to detect between malicious validators or validators who simply had some faulty configuration that led them to create a slashable offense.
 
-The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties are relatively small. If you are slashed, you should keep performing your validator duties until you are exited. After being exited, you can withdraw your remaining validator balance using our [withdrawal guide](/manage-validator/withdraw-validator.md).
+The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties are relatively small. If you are slashed, you should keep performing your validator duties until you are exited. After being exited, you can withdraw your remaining validator balance using our [withdrawal guide](/manage-validator/withdraw-validator.mdx).
 
 See our [slashing protection guide](/backup-and-migration/slashing-protection.mdx) before moving a validator or changing its setup.
 
@@ -217,7 +217,7 @@ Proposing a block is a factor of random chance depending on the number of active
 
 #### Can I get back my ETH? How can I withdraw my validator gains?
 
-Yes, as of the capella hardfork partial and full withdrawals of validators is enabled. Please use our [guide to withdraw your validator](/manage-validator/withdraw-validator.md)
+Yes, as of the capella hardfork partial and full withdrawals of validators is enabled. Please use our [guide to withdraw your validator](/manage-validator/withdraw-validator.mdx)
 
 #### Where can I read more about the incentive model in Ethereum proof-of-stake?
 
