@@ -39,7 +39,7 @@ Ensuring you stop and disable Prysm is critical to avoiding slashing events befo
 
 Disabling Prysm prevents it from automatically starting up again after a reboot. 
 
-Remove Prysm's validator keys as an added protection by following [these](/backup-and-migration/migrating-keys.md#step-5--verification-and-restarting-the-validator-client) instructions.  
+Remove Prysm's validator keys as an added protection by following [these](/backup-and-migration/migrating-keys.mdx#step-5--verification-and-restarting-the-validator-client) instructions.  
 
 ### Step 3: Export slashing protection history
 
