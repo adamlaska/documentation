@@ -343,7 +343,7 @@ A maximum to 16 validators can have their balances withdrawn per block so delay 
 
 To fully withdraw a validator and its earnings, your validator needs to also be exited in addition to having its [withdrawal credentials](https://github.com/ethereum/consensus-specs/blob/master/specs/phase0/validator.md#withdrawal-credentials) changed.
 
-Please follow our [exiting-a-validator how-to](/manage-validator/exit-a-validator.md).
+Please follow our [exiting-a-validator how-to](/manage-validator/exit-a-validator.mdx).
 
 Refer to the above partial withdrawal guidance to change your validator's withdrawal credentials.
 
@@ -393,7 +393,7 @@ Partial withdrawals only require an updated `withdrawal_credentials` field and w
 Once you submit a BLS to Exec request to tell Ethereum the address you want to use in order to receive your withdrawn funds, it goes through several processing pipelines that might take a bit longer than expected. If your beacon node has also received many other requests for BLS to exec changes, your initial request could be dropped and you may need to try again, so do not panic if you have submitted a request and nothing has happened yet.
 
 #### I set my `withdrawal_credentials` but I am not fully withdrawn. How do I fully withdraw?
-Full validator withdrawals require your validator to exit first, as exits do not happen automatically. You will need to submit a voluntary exit by following our documentation [here](/manage-validator/exit-a-validator.md). Once your validator exits, it will no longer need to perform its responsibilities after some time (there can be a delay if the validator is part of a sync committee or recently slashed) . The ordering of requests for setting withdrawal credentials or exiting does not matter, once a validator has both its withdrawal credentials updated as well as in an exited state funds will automatically be added to the chosen execution address when processed. **note:** this process will take some time as withdrawals, full or partial, are processed at a rate of at most 16 validators per block.
+Full validator withdrawals require your validator to exit first, as exits do not happen automatically. You will need to submit a voluntary exit by following our documentation [here](/manage-validator/exit-a-validator.mdx). Once your validator exits, it will no longer need to perform its responsibilities after some time (there can be a delay if the validator is part of a sync committee or recently slashed) . The ordering of requests for setting withdrawal credentials or exiting does not matter, once a validator has both its withdrawal credentials updated as well as in an exited state funds will automatically be added to the chosen execution address when processed. **note:** this process will take some time as withdrawals, full or partial, are processed at a rate of at most 16 validators per block.
 
 #### My keys were compromised, can I still withdraw?
 You are still able to send the message as long as you have access to the mnemonic and can produce the signed `blstoexecutionchange` message to submit. Depending on where the keys were compromised there may be different protection programs to apply for to "frontrun" the compromiser. Please seek out the EthStaker community on [Reddit](https://www.reddit.com/r/ethstaker/) or [Discord](https://discord.gg/ethstaker) for more details if this applies to you.
