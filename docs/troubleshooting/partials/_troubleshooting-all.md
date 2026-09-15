@@ -7,7 +7,7 @@ import ValidatorTroubleshootingPartial from '@site/docs/troubleshooting/partials
 
 ### Troubleshooting your beacon node
 
-import BeaconTroubleshootingPartial from '@site/docs/troubleshooting/partials/_beacon-troubleshooting.md';
+import BeaconTroubleshootingPartial from '@site/docs/troubleshooting/partials/_beacon-troubleshooting.mdx';
 
 <BeaconTroubleshootingPartial />
 
