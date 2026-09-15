@@ -24,7 +24,7 @@ Looking for a particular phrase to perform a voluntary exit in Prysm? Read Step 
 
 :::
 
-After providing confirmation, voluntary exit request will be broadcasted through your beacon node. Visit our [Command-line options documentation](/configure-prysm/command-line-options.md) for more configuration options.
+After providing confirmation, voluntary exit request will be broadcasted through your beacon node. Visit our [Command-line options documentation](/configure-prysm/command-line-options.mdx) for more configuration options.
 
 :::caution 
 

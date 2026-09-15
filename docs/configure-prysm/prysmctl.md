@@ -87,7 +87,7 @@ docker run -it gcr.io/offchainlabs/prysm/cmd/prysmctl:latest --help
 
 The `--help` flag will provide a list of commands, subcommands, and flags to use.
 
-Commands can also be found in our [Prysm parameter documentation](/configure-prysm/command-line-options.md)
+Commands can also be found in our [Prysm parameter documentation](/configure-prysm/command-line-options.mdx)
 
 ### Frequently asked questions
 
