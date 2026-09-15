@@ -14,6 +14,6 @@ import BeaconTroubleshootingPartial from '@site/docs/troubleshooting/partials/_b
 
 ### Troubleshooting your execution node
 
-import ExecutionTroubleshootingPartial from '@site/docs/troubleshooting/partials/_execution-troubleshooting.md';
+import ExecutionTroubleshootingPartial from '@site/docs/troubleshooting/partials/_execution-troubleshooting.mdx';
 
 <ExecutionTroubleshootingPartial />
