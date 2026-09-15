@@ -20,7 +20,7 @@ The consensus chain, which maintains Ethereum's consensus state, coordinates val
 Beacon nodes use beacon node client software to coordinate Ethereum's proof-of-stake consensus. A beacon node will talk to other beacon nodes via peer-to-peer networking, to a local execution node, and (optionally) to a local validator.
 
 #### BLS key
-Validators use [BLS](/learn/dev-concepts/bls-cryptography.md) key pairs to sign consensus messages. A validator public key is visible on staking explorers; its private key must remain secret. It is not an Ethereum execution address.
+Validators use [BLS](/learn/dev-concepts/bls-cryptography.mdx) key pairs to sign consensus messages. A validator public key is visible on staking explorers; its private key must remain secret. It is not an Ethereum execution address.
 
 #### BLS to Execution Change
 A BLS-to-execution change updates a validator's withdrawal credentials from BLS (`0x00`) to an Ethereum execution address (`0x01`). It is distinct from an execution-layer withdrawal request, which is used for exits, partial withdrawals, and consolidations after Electra.
