@@ -66,7 +66,7 @@ import QuickstartRunValidatorPartial from '@site/docs/install-prysm/partials/_qu
 This usually takes a few hours if your disk I/O is relatively slow. If it remains in this state for more than a day, your disk might not be able to write data as fast as the chain head advances. The most straightforward way to resolve this is using an SSD.
 
 #### Why do you recommend putting everything on a single machine?
-Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](/security-best-practices.md).
+Keeping all of your client software on a single machine keeps things simple, which aligns with our [security best practices](/security-best-practices.mdx).
 
 #### Can I use Prysm on a Mac M1 ARM chip?
 Yes. Choose **one** of the following actions to ensure that Prysm can run on your M1:
