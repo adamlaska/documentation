@@ -20,10 +20,10 @@ After the Deneb hardfork
 :::
 
 ## `UNKNOWN` State
-Prysm's [validator](/learn/dev-concepts/prysm-validator-client.mdx) client will report that the state of a particular validator is `UNKNOWN` when it loads validator keys that have not yet submitted a valid deposit to the [execution chain](/terminology.mdx#execution-layer) [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md).
+Prysm's [validator](/learn/dev-concepts/prysm-validator-client.mdx) client will report that the state of a particular validator is `UNKNOWN` when it loads validator keys that have not yet submitted a valid deposit to the [execution chain](/terminology.mdx#execution-layer) [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.mdx).
 
 ## `DEPOSITED` State
-Once a valid transaction has been submitted to the [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md), your [beacon node](/learn/dev-concepts/prysm-beacon-node.mdx) will detect the presence of the transaction on the execution chain and your [validator](/learn/dev-concepts/prysm-validator-client.mdx) client will now report being in the `DEPOSITED` state. The validator will get added to the beacon state within the next finalization period as a pending deposit. Learn about execution requests [here](/learn/concepts/execution-requests.mdx).
+Once a valid transaction has been submitted to the [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.mdx), your [beacon node](/learn/dev-concepts/prysm-beacon-node.mdx) will detect the presence of the transaction on the execution chain and your [validator](/learn/dev-concepts/prysm-validator-client.mdx) client will now report being in the `DEPOSITED` state. The validator will get added to the beacon state within the next finalization period as a pending deposit. Learn about execution requests [here](/learn/concepts/execution-requests.mdx).
 
 ## `PENDING` State
 Before a deposit can appear in the Beacon Chain, it must pass through [process_pending_deposits](https://github.com/ethereum/consensus-specs/blob/dev/specs/electra/beacon-chain.md#new-process_pending_deposits). Once processed, the depositor—if new—receives a validator index and enters the activation queue. The usual follow-distance rule still withholds deposits during the brief transition window after the Electra hard fork. However, this becomes irrelevant after a few weeks as sufficient epochs get finalized.

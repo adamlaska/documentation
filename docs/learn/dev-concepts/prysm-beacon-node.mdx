@@ -45,7 +45,7 @@ The sync service has two responsibilities: ensuring the local beacon chain is up
 
 ## Execution service
 
-The [execution](/terminology.mdx#execution-layer) service uses the [go-ethereum ethclient](https://github.com/ethereum/go-ethereum/tree/master/ethclient) to connect to a running execution client in order to listen for incoming [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.md) logs. The [validator clients](/learn/dev-concepts/prysm-validator-client.mdx) include deposit objects inside of their proposed blocks, and the beacon chain state transition function then activates any pending validators from these deposits.
+The [execution](/terminology.mdx#execution-layer) service uses the [go-ethereum ethclient](https://github.com/ethereum/go-ethereum/tree/master/ethclient) to connect to a running execution client in order to listen for incoming [validator deposit contract](/learn/dev-concepts/validator-deposit-contract.mdx) logs. The [validator clients](/learn/dev-concepts/prysm-validator-client.mdx) include deposit objects inside of their proposed blocks, and the beacon chain state transition function then activates any pending validators from these deposits.
 
 As the beacon node will need to frequently access information and one cannot rely on perfect latency from the [execution](/terminology.mdx#execution-layer) client, the service also includes the ability to cache received logs and blocks from the execution chain.
 
