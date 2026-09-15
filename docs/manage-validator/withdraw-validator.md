@@ -244,7 +244,7 @@ Move the generated `bls_to_execution_changes-*.json` file to an online environme
 
 ### Step 5: Submit your signed `blstoexecutionchange` message(s) to the Ethereum network using `prysmctl`
 
-In this step, you will submit your signed requests to the Ethereum network using a tool provided by the Prysm project called `prysmctl`. Learn how to download and install the `prysmctl` tool from our [guide](/configure-prysm/prysmctl.md) or check commands on [Command-line options](/configure-prysm/command-line-options.mdx). You’ll need access to a synced beacon node to proceed with this step (it does not need to be a Prysm beacon node).
+In this step, you will submit your signed requests to the Ethereum network using a tool provided by the Prysm project called `prysmctl`. Learn how to download and install the `prysmctl` tool from our [guide](/configure-prysm/prysmctl.mdx) or check commands on [Command-line options](/configure-prysm/command-line-options.mdx). You’ll need access to a synced beacon node to proceed with this step (it does not need to be a Prysm beacon node).
 
 Once `prysmctl` is downloaded, you can use the `prysmctl validator withdraw` command, which will ask for terms of service acceptance and confirmation of command by providing additional flags, and also a path to the bls_to_execution_changes file from the previous step.
 
