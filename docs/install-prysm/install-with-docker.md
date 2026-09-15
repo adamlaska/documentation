@@ -228,7 +228,7 @@ Consider using `--suggested-fee-recipient` on your beacon node. See [How to conf
 
 ## Run a validator
 
-import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-partial.md';
+import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-partial.mdx';
 
 <SingletonWarningPartial />
 
