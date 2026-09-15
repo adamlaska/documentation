@@ -14,7 +14,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info Knowledge Check
 
-Not familiar with nodes, networks, and related terminology? Consider reading [Nodes and networks](/learn/concepts/nodes-and-networks.md) before proceeding. 
+Not familiar with nodes, networks, and related terminology? Consider reading [Nodes and networks](/learn/concepts/nodes-and-networks.mdx) before proceeding. 
 
 :::
 
