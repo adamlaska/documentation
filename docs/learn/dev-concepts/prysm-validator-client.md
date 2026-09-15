@@ -45,7 +45,7 @@ A [block proposal](../../terminology.mdx#proposal-propose) must include several 
 7. All pending [attestations](../../terminology.mdx#attestation-attest) from the beacon node are fetched.
 8. The block object is constructed by packaging the above items into a block data structure.
 9. The state root hash is computed, signing the block with the [validator](../../terminology.mdx#validator)'s private key.
-10. The block is [proposed](../../terminology.mdx#proposal-propose) by sending it to the beacon node via [gRPC](/apis/prysm-public-api.md).
+10. The block is [proposed](../../terminology.mdx#proposal-propose) by sending it to the beacon node via [gRPC](/apis/prysm-public-api.mdx).
 
 ### Attesting to a Beacon Block
 
@@ -55,4 +55,4 @@ A [block proposal](../../terminology.mdx#proposal-propose) must include several 
 2. A request is made to the beacon node for the information required to attest a block.
 3. An attestation bitfield is constructed using the validator index.
 4. The attestation key is then signed with a [validator](../../terminology.mdx#validator)'s private key.
-5. Halfway through the slot duration, the attestation is sent to the beacon node via [gRPC](/apis/prysm-public-api.md).
+5. Halfway through the slot duration, the attestation is sent to the beacon node via [gRPC](/apis/prysm-public-api.mdx).
