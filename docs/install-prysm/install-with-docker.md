@@ -103,7 +103,7 @@ If you're not already running an execution node, refer to our [Quickstart](/inst
 
 Next, use Docker to tell your beacon node to connect to your local execution node. Note that `<YOUR_ETH_EXECUTION_NODE_ENDPOINT>` is either an HTTP endpoint `http://host:port` or an IPC path such as `/path/to/geth.ipc`.
 
-import APIExposurePartial from '@site/docs/partials/_api-exposure.md';
+import APIExposurePartial from '@site/docs/partials/_api-exposure.mdx';
 
 <APIExposurePartial />
 
