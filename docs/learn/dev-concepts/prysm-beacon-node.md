@@ -22,7 +22,7 @@ At runtime, the beacon node initializes and maintains a number of services that 
 * A [**sync service**](#sync-service) which both queries nodes across the network to ensure the latest [canonical head](/terminology.mdx#canonical-head-block) and state are synced and processes incoming block announcements from peers.
 * An [**execution service**](#execution-service) that listens to the latest event logs from the validator deposit contract and the execution chain.
 * A [**public RPC server**](#public-rpc-server) that requests information about the beacon chain's state, the latest block, validator information, et cetera.
-* A [**P2P server**](/learn/dev-concepts/p2p-networking.md) which handles the life cycle of peer connections and facilitates broadcasting across the network.
+* A [**P2P server**](/learn/dev-concepts/p2p-networking.mdx) which handles the life cycle of peer connections and facilitates broadcasting across the network.
 * A **full test suite** for running simulation on Ethereum beacon chain state transitions, benchmarks and conformity tests across clients.
 
 We isolate each of these services into separate packages, each responsible for its own life cycle, logging and dependency management. Each Prysm service implements an interface to start, stop, and verify its status at any time.
@@ -33,7 +33,7 @@ The blockchain service is arguably the most important part of the project, as it
 In Ethereum, blocks can be proposed in intervals known as _slots_, where each slot is a period of 12 seconds. During a slot, proposers are assigned to create and send blocks into the beacon node for acceptance. It is possible, however, that the proposer may fail to do their job at their assigned slot; in this case, the blockchain service processes skipped slots appropriately to ensure that the chain does not stall.
 
 ## Operations service
-The operations service handles important information contained in blocks on the beacon chain, such as voluntary validator exits, [proposals](../../terminology.mdx#proposal-propose), [attestations](../../terminology.mdx#attestation-attest), slashings, and more. The operation is received from the [sync service](#sync-service) via the [P2P network](/learn/dev-concepts/p2p-networking.md), or from data the node retrieves locally.
+The operations service handles important information contained in blocks on the beacon chain, such as voluntary validator exits, [proposals](../../terminology.mdx#proposal-propose), [attestations](../../terminology.mdx#attestation-attest), slashings, and more. The operation is received from the [sync service](#sync-service) via the [P2P network](/learn/dev-concepts/p2p-networking.mdx), or from data the node retrieves locally.
 
 ## Core package
 
@@ -41,7 +41,7 @@ The core package implements the Ethereum beacon chain state transition function,
 
 ## Sync service
 
-The sync service has two responsibilities: ensuring the local beacon chain is up-to-date with the latest [canonical head](/terminology.mdx#canonical-head-block) and state as observed by the network, and to listen and respond to requests for new block announcements from peers. The service was designed to be as independent as possible from the rest of the system, and is the main point of interaction for peers over the [P2P network](/learn/dev-concepts/p2p-networking.md). Everything in the sync service runs concurrently through a single `Start()` function, which handles several different message requests and responses.
+The sync service has two responsibilities: ensuring the local beacon chain is up-to-date with the latest [canonical head](/terminology.mdx#canonical-head-block) and state as observed by the network, and to listen and respond to requests for new block announcements from peers. The service was designed to be as independent as possible from the rest of the system, and is the main point of interaction for peers over the [P2P network](/learn/dev-concepts/p2p-networking.mdx). Everything in the sync service runs concurrently through a single `Start()` function, which handles several different message requests and responses.
 
 ## Execution service
 
