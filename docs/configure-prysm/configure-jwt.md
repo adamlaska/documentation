@@ -18,7 +18,7 @@ First, **select a configuration**:
 
 <div className='jwt-guide'>
 
-import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.mdx';
 
 <MultidimensionalContentControlsPartial />
 

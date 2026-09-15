@@ -22,7 +22,7 @@ This guidance is targeted at users who are already comfortable with Docker. See 
 
 <p><strong>Select a configuration</strong>:</p>
 
-import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.mdx';
 
 <MultidimensionalContentControlsPartial />
 

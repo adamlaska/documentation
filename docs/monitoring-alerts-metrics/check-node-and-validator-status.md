@@ -15,7 +15,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 ## Select a configuration 
 
-import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.mdx';
 
 <MultidimensionalContentControlsPartial />
 

@@ -81,7 +81,7 @@ When configuring `Allow inbound` rules, consider tying the rule to an IP address
 
 ## Determine your IP addresses
 
-import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.mdx';
 
 <MultidimensionalContentControlsPartial />
 

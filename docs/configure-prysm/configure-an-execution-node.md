@@ -20,7 +20,7 @@ If you're looking for end-to-end configuration guidance, refer to our [Quickstar
 
 If you're looking for the simplest configuration, select `Geth` and `IPC`:
 
-import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.md';
+import MultidimensionalContentControlsPartial from '@site/docs/partials/_multidimensional-content-controls-partial.mdx';
 
 <MultidimensionalContentControlsPartial />
 
