@@ -36,7 +36,7 @@ When creating an HD wallet, you'll be given a 24-word mnemonic phrase which you 
 The ideal security for an average user participating as a validator is as follows:
 
 - Create a wallet using the official [eth2.0-deposit-cli](https://github.com/ethereum/eth2.0-deposit-cli) and keep your mnemonic stored offline, safely.
-- Import only the validating keys you need into your validator client, such as by following the instructions [here](/install-prysm/install-with-script.md#step-5-run-a-validator-using-prysm).
+- Import only the validating keys you need into your validator client, such as by following the instructions [here](/install-prysm/install-with-script.mdx#step-5-run-a-validator-using-prysm).
 
 For **best security** in production cloud deployments, it's best you use a **remote signer**, as that offers absolute separation of your secret keys and your validator client software. Read more about remote signers [here](/manage-wallet/use-web3signer.md).
 
