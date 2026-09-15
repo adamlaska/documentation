@@ -1,6 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
+import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.mdx';
 
 <JwtGenerationPartial />
 

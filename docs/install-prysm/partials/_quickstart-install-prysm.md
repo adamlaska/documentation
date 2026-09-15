@@ -43,7 +43,7 @@ curl https://raw.githubusercontent.com/OffchainLabs/prysm/master/prysm.sh --outp
 
 <h3>Generate JWT Secret</h3>
 
-import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.md';
+import JwtGenerationPartial from '@site/docs/partials/_jwt-generation-partial.mdx';
 
 <JwtGenerationPartial />
     
