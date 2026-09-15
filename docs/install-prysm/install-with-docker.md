@@ -222,7 +222,7 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -v \path\to\genesis.ssz:/genesis/gen
 
 **You plan to run a validator?**
 
-Consider using `--suggested-fee-recipient` on your beacon node. See [How to configure Fee Recipient](/configure-prysm/configure-fee-recipient.md) for more information about this feature.
+Consider using `--suggested-fee-recipient` on your beacon node. See [How to configure Fee Recipient](/configure-prysm/configure-fee-recipient.mdx) for more information about this feature.
 
 :::
 
@@ -296,7 +296,7 @@ docker run -it -v %LOCALAPPDATA%\eth2.0-deposit-cli\validator_keys:/keys -v %LOC
 
 ### Run validator
 
-Open a second terminal window. Issue the following command to start the validator by replacing `<YOUR_WALLET_ADDRESS>` by the address of a wallet you own. See [How to configure Fee Recipient](/configure-prysm/configure-fee-recipient.md) for more information about this feature:
+Open a second terminal window. Issue the following command to start the validator by replacing `<YOUR_WALLET_ADDRESS>` by the address of a wallet you own. See [How to configure Fee Recipient](/configure-prysm/configure-fee-recipient.mdx) for more information about this feature:
 
 
 <Tabs
