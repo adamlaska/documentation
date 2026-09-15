@@ -180,7 +180,7 @@ In these cases you would replace the `--suggested-fee-recipient` flag with  `--p
  
 :::info
 
-Validators updated through the [Keymanager-API's](/apis/keymanager-api.md) fee recipient APIs will take on the default `proposer-settings` provided.
+Validators updated through the [Keymanager-API's](/apis/keymanager.mdx) fee recipient APIs will take on the default `proposer-settings` provided.
 
 If the `--enable-builder` flag is used without providing `--suggested-fee-recipient`, `--proposer-settings-file`, or `--proposer-settings-url` it will override builder settings from the db if proposer settings are saved, or it will set default builder settings and only save to the db if fee-recipient settings are saved through the keymanager APIs.
 
