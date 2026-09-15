@@ -87,7 +87,7 @@ These commands will automatically install dependencies.
 
 ## Configure ports (optional)
 
-We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Prysm to use your newly opened ports. Refer to [Configure ports and firewalls](/manage-connections/configure-ports-and-firewalls.md) for more information.
+We recommend opening up ports `tcp/13000` and `udp/12000` on your router and firewall to improve peer-to-peer connectivity. Refer to your operating system and router documentation for port configuration instructions. With this complete, appending `--p2p-host-ip=$(curl -s ident.me)` to your beacon node startup command will configure Prysm to use your newly opened ports. Refer to [Configure ports and firewalls](/manage-connections/configure-ports-and-firewalls.mdx) for more information.
 
 <div className='hide-tabs'>
 
@@ -398,4 +398,4 @@ docker run -it -v %LOCALAPPDATA%\Eth2:/data -p 4000:4000 -p 13000:13000 -p 12000
 
 :::
 
-This tells your Docker container to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](/manage-connections/configure-ports-and-firewalls.md) for more information.
+This tells your Docker container to "listen" for connections from outside of your container, allowing you (and other services) to reach your RPC endpoint(s). See [Configure ports and firewalls](/manage-connections/configure-ports-and-firewalls.mdx) for more information.
