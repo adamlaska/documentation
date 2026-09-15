@@ -97,7 +97,7 @@ In the following examples, we'll use the checkpoint sync endpoint provided [beac
 
 <div>
 
-Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a checkpoint](/configure-prysm/sync-from-a-checkpoint.md) for more information about this feature.
+Syncing from a checkpoint usually takes a couple of minutes. See [Sync from a checkpoint](/configure-prysm/sync-from-a-checkpoint.mdx) for more information about this feature.
 
 <Tabs groupId="network" defaultValue="mainnet" values={[
       {label: 'Mainnet', value: 'mainnet'},
