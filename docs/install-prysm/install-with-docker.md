@@ -232,7 +232,7 @@ import SingletonWarningPartial from '@site/docs/partials/_singleton-warning-part
 
 <SingletonWarningPartial />
 
-import FullSyncWarningPartial from '@site/docs/partials/_full-sync-warning-partial.md';
+import FullSyncWarningPartial from '@site/docs/partials/_full-sync-warning-partial.mdx';
 
 <FullSyncWarningPartial />
 
