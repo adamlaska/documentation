@@ -109,7 +109,7 @@ No. All Ethereum network participants need to run both an execution node and a b
 Mining is a proof-of-work consensus mechanism. Ethereum's consensus is now driven by a proof-of-stake mechanism, which replaces miners with validators.
 
 #### Where do slashers come into play?
-Slashers detect slashable validator messages and submit evidence to the network. They are optional and are not required to operate a validator. Learn more in the [slasher documentation](/configure-prysm/run-a-slasher.md).
+Slashers detect slashable validator messages and submit evidence to the network. They are optional and are not required to operate a validator. Learn more in the [slasher documentation](/configure-prysm/run-a-slasher.mdx).
 
 #### How do I get testnet `ETH`?
 You can request testnet `ETH` from public faucets. For Sepolia, try the [Sepolia PoW Faucet](https://sepolia-faucet.pk910.de/) or [Alchemy's Sepolia Faucet](https://sepoliafaucet.com/). For Hoodi, check the [Hoodi GitHub repository](https://github.com/eth-clients/hoodi) for available faucets. You can also ask the community for testnet `ETH` on either the [Prysm Discord server](https://discord.gg/qEZK94mFXP) or on [r/ethstaker](https://www.reddit.com/r/ethstaker).
