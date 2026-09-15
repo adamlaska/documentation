@@ -129,7 +129,7 @@ With REST and several beacon nodes, the `url` field of these logs lists every co
 ### Monitoring and testing
 
 - Monitor logs for `Failed health check` and `Health status changed` messages.
-- Use [Prometheus and Grafana](/monitoring-alerts-metrics/grafana-dashboard.md) (enabled via `--monitoring-port=8081`) to track validator performance.
+- Use [Prometheus and Grafana](/monitoring-alerts-metrics/grafana-dashboard.mdx) (enabled via `--monitoring-port=8081`) to track validator performance.
 - Test fallbacks by shutting down one beacon node and confirming the validator continues attesting and proposing via the remaining endpoints. With REST, shut down all but one node—whichever one you keep, the validator client should keep performing its duties.
 
 ### Other common flags
