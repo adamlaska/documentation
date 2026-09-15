@@ -56,7 +56,7 @@ Slashing is a way for the network to penalize validator actions that can be harm
 
 The most common way validators get slashed is by **running the same validator key in two separate validator client processes at the same time**. This will absolutely get you slashed. Some stakers try to create complicated failover scenarios without realizing the risk this entails, do not do this. If you already got slashed, you will leak funds for a while until you are forcefully exited from the validator registry. Thankfully, slashing penalties are relatively small. If you are slashed, you should keep performing your validator duties until you are exited. After being exited, you can withdraw your remaining validator balance using our [withdrawal guide](/manage-validator/withdraw-validator.md).
 
-See our [slashing protection guide](/backup-and-migration/slashing-protection.md) before moving a validator or changing its setup.
+See our [slashing protection guide](/backup-and-migration/slashing-protection.mdx) before moving a validator or changing its setup.
 
 ### Running Prysm
 
@@ -173,7 +173,7 @@ There are a few possibilities. Your deposit may not yet have been processed, may
 
 #### How can I move my validator to a different computer without getting slashed?
 
-Prysm implements the slashing protection [EIP-3076 standard format](https://eips.ethereum.org/EIPS/eip-3076), meaning you can export your slashing protection history and import it into another machine running any Ethereum consensus client. See our [slashing protection guide](/backup-and-migration/slashing-protection.md) for details. Here are some additional tips to help keep you safe during migration:
+Prysm implements the slashing protection [EIP-3076 standard format](https://eips.ethereum.org/EIPS/eip-3076), meaning you can export your slashing protection history and import it into another machine running any Ethereum consensus client. See our [slashing protection guide](/backup-and-migration/slashing-protection.mdx) for details. Here are some additional tips to help keep you safe during migration:
 
 1. Turn off your beacon node and validator on machine 1, make sure it is not running as a system process. You can check this using the process monitor tools of your OS, or a command line tool such as top or htop and check for anything containing the name “prysm” “validator” or “beacon”
 2. Note the location of your wallet directory. If you used the default when you started Prysm, you can view its path at the top of the output of `validator accounts list`, which varies based on your operating system

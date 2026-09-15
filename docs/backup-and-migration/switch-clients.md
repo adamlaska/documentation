@@ -45,7 +45,7 @@ Remove Prysm's validator keys as an added protection by following [these](/backu
 
 Ensure that you stop Prysm before exporting slashing protection in order to capture all validator actions. 
 
-We have a section dedicated to exporting and importing slashing protection history [here.](/backup-and-migration/slashing-protection.md) Follow the steps regarding exporting slashing protection history. 
+We have a section dedicated to exporting and importing slashing protection history [here.](/backup-and-migration/slashing-protection.mdx) Follow the steps regarding exporting slashing protection history. 
 
 ### Step 4: Update port forwarding
 
