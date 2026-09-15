@@ -18,7 +18,7 @@ This may be overkill for at-home stakers who use the `prysm.sh` script to run Pr
 
 ### Docker
 
-You can use Docker to run your beacon node and validators as background services. See [Install with Docker](/install-prysm/install-with-docker.md). You can monitor and view your running Docker containers using `docker ps`.
+You can use Docker to run your beacon node and validators as background services. See [Install with Docker](/install-prysm/install-with-docker.mdx). You can monitor and view your running Docker containers using `docker ps`.
 
 ### Systemd (Linux)
 
