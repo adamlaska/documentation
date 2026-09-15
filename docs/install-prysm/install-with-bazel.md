@@ -161,7 +161,7 @@ bazel run //cmd/beacon-chain --config=release -- --execution-endpoint=<YOUR_ETH_
 
 ## Run a validator
 
-Ensure that your beacon node is fully synced before proceeding. See [Check node and validator status](/monitoring-alerts-metrics/check-node-and-validator-status.md) for detailed status-checking instructions.
+Ensure that your beacon node is fully synced before proceeding. See [Check node and validator status](/monitoring-alerts-metrics/check-node-and-validator-status.mdx) for detailed status-checking instructions.
 
 Navigate to the [Mainnet Launchpad](https://launchpad.ethereum.org/summary) and follow the instructions. If you want to participate in the **testnet**, you can navigate to the [Hoodi](https://hoodi.launchpad.ethereum.org/).
 
