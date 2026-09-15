@@ -8,7 +8,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 <HeaderBadgesWidget />
 
-For Ethereum and consensus-layer resources, see [Ethereum reading resources](/learn/ethereum-reading.md).
+For Ethereum and consensus-layer resources, see [Ethereum reading resources](/learn/ethereum-reading.mdx).
 
 ## Go resources
 
