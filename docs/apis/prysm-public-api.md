@@ -11,7 +11,7 @@ import {HeaderBadgesWidget} from '@site/src/components/HeaderBadgesWidget.js';
 
 :::info This API is only used by Prysm
 
-For a standard API that all Ethereum beacon nodes implement, see [here](/apis/ethereum-beacon-node-api.md). Over the next few quarters, we plan on deprecating this API and replacing it with the standard API.
+For a standard API that all Ethereum beacon nodes implement, see [here](/apis/ethereum-beacon-node-api.mdx). Over the next few quarters, we plan on deprecating this API and replacing it with the standard API.
 
 :::
 
