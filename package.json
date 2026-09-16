@@ -11,19 +11,14 @@
     "rename-version": "docusaurus rename-version",
     "swizzle": "docusaurus swizzle",
     "generate-cli-reference": "node scripts/generate-cli-reference.mjs",
-    "check-cli-reference": "node scripts/generate-cli-reference.mjs --check",
-    "move-doc": "tsx scripts/move-doc.ts"
+    "check-cli-reference": "node scripts/generate-cli-reference.mjs --check"
   },
   "devDependencies": {
     "@docusaurus/core": "^3.10.2",
     "@docusaurus/preset-classic": "^3.10.2",
     "@signalwire/docusaurus-plugin-llms-txt": "^1.2.2",
-    "glob": "^13.0.6",
-    "gray-matter": "^4.0.3",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "remark-math": "^6.0.0",
-    "tsx": "^4.23.13"
+    "react-dom": "18.3.1"
   },
   "dependencies": {
     "@docusaurus/theme-search-algolia": "^3.10.2",
